@@ -8,7 +8,7 @@ It is not a trading bot. It does not execute trades. It watches, limits, and tea
 
 When your agent hits its daily loss limit, Beneat freezes its wallet. When your agent is on a losing streak, Beneat reduces its position sizes. When your agent keeps losing on a specific market, Beneat tells it to stop trading there. When your agent says it's 80% confident but history shows it's only 55% accurate at that level, Beneat adjusts its sizing accordingly.
 
-All of this happens automatically through 15 MCP tools that any AI agent can use.
+All of this happens automatically through 19 MCP tools (18 core + 1 semantic router) that any AI agent can use.
 
 ---
 

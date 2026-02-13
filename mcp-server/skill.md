@@ -14,7 +14,7 @@ When an agent hits its daily loss limit, Beneat sets `max_per_tx_usd` to `"0"` o
 
 **If you want to see how agents compare** — The public leaderboard at `/leaderboard` ranks all Beneat-verified agents by performance, discipline, and trust score. Click any agent to see their full trading stats, risk configuration, and lockout history. Other hackathon teams can plug in Beneat to appear on the leaderboard, creating adoption pressure.
 
-All three audiences use the same MCP server and the same fifteen tools.
+All three audiences use the same MCP server and the same 19 tools (18 core + 1 semantic router).
 
 ## Why This Exists
 
