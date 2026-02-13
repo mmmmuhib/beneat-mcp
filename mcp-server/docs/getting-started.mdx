@@ -1,0 +1,777 @@
+---
+title: "Getting Started with Beneat MCP"
+description: "Add quantitative risk management to your Solana AI trading agent in under 5 minutes."
+---
+
+# Getting Started with Beneat MCP
+
+Beneat is an MCP server that sits between your money and your AI trading agent. It enforces risk rules the agent cannot override, tracks performance to detect bad decisions, and coaches the agent to trade better over time. 19 tools, zero code changes to your agent.
+
+<CardGroup cols={2}>
+
+<Card title="Risk Enforcement" icon="shield-halved">
+  Daily loss limits, trade frequency caps, cooldown periods, and lockouts — all enforced on-chain and at the wallet level. When limits are breached, the agent's wallet freezes automatically.
+</Card>
+
+<Card title="Agent Coaching" icon="graduation-cap">
+  Session-aware position sizing, confidence calibration, and market recommendations. Beneat tells your agent where it has edge and reduces size when it's tilting.
+</Card>
+
+<Card title="Behavioral Analytics" icon="chart-line">
+  Hallucination rate, overconfidence index, tilt detection, revenge trading analysis, and machine-readable directives your agent can act on programmatically.
+</Card>
+
+<Card title="Agent Verification" icon="badge-check">
+  Trust scores (0–100) and risk grades (A–F) based entirely on on-chain data. Other agents can verify your agent's discipline before accepting counterparty trades.
+</Card>
+
+</CardGroup>
+
+---
+
+## Prerequisites
+
+<Info>
+**Before you start, you'll need:**
+- **Node.js >= 18** — runtime for the MCP server
+- **MCP-compatible agent** — Claude Desktop, Cursor, or any framework using the MCP SDK
+- **Solana wallet** — a base58-encoded public key (devnet is fine)
+- **Helius API key** (optional) — unlocks Tier 2/3 calibration, coaching, and analytics
+- **AgentWallet** (optional) — enables wallet-level transaction blocking for full enforcement
+
+For HTTP/REST mode, you don't need an MCP-compatible agent — any HTTP client works.
+</Info>
+
+---
+
+## Installation
+
+<Steps>
+
+<Step title="Clone and build">
+
+```bash
+git clone https://github.com/beneat-solana/beneat-solana-hackathon.git
+cd beneat-solana-hackathon/mcp-server
+npm install
+npm run build
+```
+
+This compiles TypeScript to `dist/` via `tsc`.
+
+</Step>
+
+<Step title="Verify with the MCP Inspector">
+
+```bash
+npm run inspect
+```
+
+The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) opens a browser UI where you can test all 19 tools interactively. Confirm you see `beneat_get_status`, `beneat_calibrate`, and the rest listed.
+
+</Step>
+
+<Step title="Note the entry point path">
+
+You'll need the absolute path to `dist/index.js` for MCP configuration:
+
+```bash
+echo "$(pwd)/dist/index.js"
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## MCP Configuration
+
+<Tabs>
+
+<Tab title="Claude Desktop">
+
+Add to `~/.claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "beneat-risk": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server/dist/index.js"],
+      "env": {
+        "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+        "HELIUS_API_KEY": "your-helius-key"
+      }
+    }
+  }
+}
+```
+
+Restart Claude Desktop. You should see Beneat's 19 tools in the tool picker.
+
+</Tab>
+
+<Tab title="Cursor">
+
+Add to your project's `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "beneat-risk": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server/dist/index.js"],
+      "env": {
+        "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+        "HELIUS_API_KEY": "your-helius-key"
+      }
+    }
+  }
+}
+```
+
+Open Cursor Settings > MCP and verify the server connects.
+
+</Tab>
+
+<Tab title="Custom Agent (MCP SDK)">
+
+Connect programmatically using `@modelcontextprotocol/sdk`:
+
+```typescript
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+const transport = new StdioClientTransport({
+  command: "node",
+  args: ["/absolute/path/to/mcp-server/dist/index.js"],
+  env: {
+    ...process.env,
+    SOLANA_RPC_URL: "https://api.devnet.solana.com",
+    HELIUS_API_KEY: "your-helius-key",
+  },
+});
+
+const client = new Client({ name: "my-trading-agent", version: "1.0.0" });
+await client.connect(transport);
+
+// Helper to call any Beneat tool
+async function callTool(name, args) {
+  const response = await client.callTool({ name, arguments: args });
+  const text = response.content?.[0]?.text;
+  return text ? JSON.parse(text) : response;
+}
+
+// Example: check if the agent can trade
+const status = await callTool("beneat_get_status", {
+  wallet_address: "YOUR_WALLET_ADDRESS",
+});
+console.log(status);
+```
+
+</Tab>
+
+<Tab title="HTTP / REST API">
+
+Start the HTTP server and call tools with any HTTP client:
+
+```bash
+# Start HTTP mode (default port 3001)
+npm run start:http
+
+# Health check
+curl http://localhost:3001/health
+
+# Tool manifest (OpenAI-compatible JSON Schema)
+curl http://localhost:3001/api/tools
+
+# Call any tool by name
+curl -X POST http://localhost:3001/api/tools/beneat_get_status \
+  -H "Content-Type: application/json" \
+  -d '{"wallet_address":"YOUR_WALLET_ADDRESS"}'
+```
+
+The REST API returns tool output directly as JSON. Error responses use standard HTTP status codes: 400 (invalid JSON), 404 (tool not found), 422 (validation failed).
+
+This works with Python, Go, Rust, shell scripts, browser fetch — anything that can make HTTP requests.
+
+</Tab>
+
+<Tab title="Remote MCP (HTTP)">
+
+Connect an MCP SDK client over HTTP instead of stdio. Useful when the server runs on a different machine or in a container.
+
+```typescript
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
+
+const transport = new StreamableHTTPClientTransport(
+  new URL("http://localhost:3001/mcp")
+);
+const client = new Client({ name: "my-trading-agent", version: "1.0.0" });
+await client.connect(transport);
+
+async function callTool(name: string, args: Record<string, unknown>) {
+  const response = await client.callTool({ name, arguments: args });
+  const text = response.content?.[0]?.text;
+  return text ? JSON.parse(text) : response;
+}
+
+const status = await callTool("beneat_get_status", {
+  wallet_address: "YOUR_WALLET_ADDRESS",
+});
+console.log(status);
+```
+
+Start the server with `npm run start:http` before connecting.
+
+</Tab>
+
+<Tab title="Remote Server (Railway)">
+
+Deploy Beneat to Railway for a hosted remote MCP server:
+
+**1. Deploy:**
+
+Push to GitHub, connect Railway to your repo, and set root directory to `mcp-server`. Railway uses `railway.toml` for build/deploy config automatically.
+
+Set environment variables in Railway dashboard: `MCP_AUTH_TOKEN`, `SOLANA_RPC_URL`, `HELIUS_API_KEY`, `SOL_PRICE_USD` as needed. `PORT` is set automatically.
+
+**2. Connect Claude Desktop via `mcp-remote`:**
+
+```json
+{
+  "mcpServers": {
+    "beneat-risk": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://your-app.up.railway.app/mcp",
+        "--header",
+        "Authorization: Bearer YOUR_TOKEN"
+      ]
+    }
+  }
+}
+```
+
+**3. Or connect programmatically with auth:**
+
+```typescript
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
+
+const transport = new StreamableHTTPClientTransport(
+  new URL("https://your-app.up.railway.app/mcp"),
+  {
+    requestInit: {
+      headers: { Authorization: "Bearer YOUR_TOKEN" },
+    },
+  }
+);
+const client = new Client({ name: "my-agent", version: "1.0.0" });
+await client.connect(transport);
+```
+
+</Tab>
+
+<Tab title="Claude.ai (Remote Connector)">
+
+Add Beneat as a remote MCP server in Claude.ai using "Add Connector":
+
+1. Deploy the server (e.g. to Railway) and note the URL
+2. In Claude.ai, go to Settings → Connectors → Add Connector
+3. Paste your server URL: `https://your-app.up.railway.app/mcp`
+
+**Authless mode** (no `MCP_AUTH_TOKEN`): Claude.ai connects directly — no credentials needed.
+
+**Authenticated mode** (`MCP_AUTH_TOKEN` set): Claude.ai automatically discovers the OAuth endpoints, registers a client, and obtains an access token via the `client_credentials` flow. No manual token configuration required.
+
+</Tab>
+
+</Tabs>
+
+---
+
+## Environment Variables
+
+| Variable | Required | Default | Purpose |
+|----------|----------|---------|---------|
+| `SOLANA_RPC_URL` | No | `https://api.devnet.solana.com` | Solana RPC endpoint |
+| `HELIUS_RPC_URL` | No | Falls back to `SOLANA_RPC_URL` | Alternative RPC via Helius |
+| `HELIUS_API_KEY` | For calibrate/analytics/coaching | — | Helius enhanced transaction history API |
+| `SOL_PRICE_USD` | No | `"150"` | SOL price for AgentWallet USD limit calculations |
+| `MCP_AUTH_TOKEN` | No | (open access) | Bearer token for HTTP auth |
+| `PUBLIC_URL` | No | (auto-detected) | Base URL for OAuth 2.1 discovery |
+
+<Warning>
+Without `HELIUS_API_KEY`, calibration is limited to **Tier 1** (capital-based defaults only). Coaching context, analytics, playbook generation, and session strategy all require Helius to fetch on-chain trade history. Set this key to unlock the full feature set.
+</Warning>
+
+---
+
+## AgentWallet Setup
+
+<Accordion title="Optional but recommended — enables wallet-level enforcement">
+
+AgentWallet gives Beneat the power to freeze your agent's spending when limits are breached. Without it, enforcement is advisory only — the tools return approval/denial JSON but cannot block transactions at the wallet level.
+
+**1. Start connection:**
+
+```bash
+curl -X POST https://agentwallet.mcpay.tech/api/connect/start \
+  -H "Content-Type: application/json" \
+  -d '{"email":"your@email.com"}'
+```
+
+**2. Complete with OTP from email:**
+
+```bash
+curl -X POST https://agentwallet.mcpay.tech/api/connect/complete \
+  -H "Content-Type: application/json" \
+  -d '{"username":"YOUR_USERNAME","email":"your@email.com","otp":"123456"}'
+```
+
+**3. Save credentials:**
+
+```json
+// ~/.agentwallet/config.json
+{
+  "apiToken": "mf_...",
+  "username": "YOUR_USERNAME"
+}
+```
+
+**Advisory vs. full enforcement:**
+- **Without AgentWallet:** Tools return JSON with `approved: false` and `reasons[]`. Your agent decides whether to comply. On-chain vault `require!()` guards still block rule-violating swap instructions.
+- **With AgentWallet:** When a lockout triggers, Beneat sets `max_per_tx_usd` to 0 via the AgentWallet API. The agent literally cannot sign any transaction until the lockout expires.
+
+</Accordion>
+
+---
+
+## Your First Calibration
+
+<Steps>
+
+<Step title="Check vault status">
+
+```typescript
+const status = await callTool("beneat_get_status", {
+  wallet_address: "YOUR_WALLET",
+});
+// → { vault_exists: false, can_trade: true, ... }
+```
+
+No vault yet — the agent is in advisory mode.
+
+</Step>
+
+<Step title="Calibrate risk rules">
+
+```typescript
+const cal = await callTool("beneat_calibrate", {
+  wallet_address: "YOUR_WALLET",
+  deposit_amount: 5,
+  strategy_type: "day_trading",
+  risk_tolerance: "medium",
+});
+// → { calibration: { tier: 1, ... }, parameters: { daily_loss_limit_sol: 0.15, ... }, unsigned_transactions: [...] }
+```
+
+This returns Tier 1 (capital-based) parameters: 0.15 SOL daily loss limit, 20 trades/day, 120s cooldown, 12h lockout duration.
+
+</Step>
+
+<Step title="Sign and submit transactions">
+
+The `unsigned_transactions` array contains base64-encoded `VersionedTransaction` objects. Your agent (or frontend) signs and submits them:
+
+```typescript
+for (const tx of cal.unsigned_transactions) {
+  // tx.transaction is a base64 VersionedTransaction
+  // tx.description tells you what it does: "Initialize vault", "Set rules", etc.
+  const decoded = VersionedTransaction.deserialize(
+    Buffer.from(tx.transaction, "base64")
+  );
+  decoded.sign([walletKeypair]);
+  await connection.sendTransaction(decoded);
+}
+```
+
+The MCP server never touches private keys.
+
+</Step>
+
+<Step title="Verify the vault is active">
+
+```typescript
+const status = await callTool("beneat_get_status", {
+  wallet_address: "YOUR_WALLET",
+});
+// → { vault_exists: true, can_trade: true, daily_loss_limit_sol: 0.15, ... }
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## Strategy & Risk Tolerance Reference
+
+<AccordionGroup>
+
+<Accordion title="Strategy types">
+
+| Strategy | Max Trades/Day | Cooldown | Best For |
+|----------|---------------|----------|----------|
+| `scalping` | 50 | 30s | High-frequency micro-trades |
+| `day_trading` | 20 | 120s | Intraday positions with moderate frequency |
+| `swing_trading` | 5 | 600s | Multi-hour/multi-day positions |
+| `conservative` | 3 | 1800s | Low-frequency, capital preservation focus |
+
+</Accordion>
+
+<Accordion title="Risk tolerances">
+
+| Level | Daily Loss % | Lockout Duration | Best For |
+|-------|-------------|-----------------|----------|
+| `low` | 1% | 24 hours | Capital preservation, new agents |
+| `medium` | 3% | 12 hours | Balanced risk/reward |
+| `high` | 5% | 6 hours | Experienced agents with proven edge |
+| `degen` | 10% | 2 hours | High-conviction, high-risk strategies |
+
+Daily loss % is relative to deposited capital. A `medium` risk agent with 5 SOL deposited can lose up to 0.15 SOL per day before lockout triggers.
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## The Enforcement Loop
+
+The minimal integration requires just 3 tool calls per trade cycle:
+
+<Steps>
+
+<Step title="Pre-flight check">
+
+```typescript
+const check = await callTool("beneat_check_trade", {
+  wallet_address: "YOUR_WALLET",
+  market: "SOL-PERP",
+  size: 0.1,
+  direction: "long",
+});
+
+if (!check.approved) {
+  console.log("Trade denied:", check.reasons);
+  // Do not execute the trade
+  return;
+}
+```
+
+</Step>
+
+<Step title="Execute the trade">
+
+Use your existing trading logic — Jupiter swap, Drift perp, Raydium, whatever. Beneat is protocol-agnostic.
+
+</Step>
+
+<Step title="Record the result">
+
+```typescript
+const result = await callTool("beneat_record_trade", {
+  wallet_address: "YOUR_WALLET",
+  pnl: -0.02, // SOL — negative = loss
+  market: "SOL-PERP",
+  confidence: 0.75, // optional: agent's confidence (0-1)
+});
+
+if (result.lockout_triggered) {
+  console.log("LOCKOUT:", result.lockout_reason);
+  // Stop all trading — wallet is frozen if AgentWallet is configured
+}
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## Integration Tiers
+
+<Tabs>
+
+<Tab title="Minimal (3 calls)">
+
+Risk enforcement only — no coaching, no playbook.
+
+```
+Before trade: beneat_check_trade(wallet, market, size)
+              → if not approved: skip trade
+
+Execute trade (your logic)
+
+After trade:  beneat_record_trade(wallet, pnl, market)
+              → if lockout_triggered: stop trading
+```
+
+Add these 3 calls to your agent and you have basic risk enforcement.
+
+</Tab>
+
+<Tab title="Standard (calibrate + enforce)">
+
+One-time setup plus ongoing enforcement.
+
+```
+Setup (once):
+  beneat_calibrate(wallet, deposit=5, strategy="day_trading", risk="medium")
+  → sign and submit unsigned transactions
+
+Trading loop:
+  beneat_check_trade(wallet)     → approve/deny
+  execute trade
+  beneat_record_trade(wallet, pnl) → lockout check
+
+Periodic:
+  beneat_recalibrate(wallet)     → update rules from latest history
+  beneat_get_analytics(wallet)   → diagnose hallucination patterns
+```
+
+</Tab>
+
+<Tab title="Full Coaching">
+
+Session-aware trading with confidence calibration and evolving playbook.
+
+```
+Session start:
+  strategy = beneat_get_session_strategy(wallet)
+  remaining_trades = strategy.max_trades
+  focus = strategy.focus_markets
+
+Trading loop:
+  check = beneat_check_trade(wallet, market, include_coaching=true)
+  if not check.approved: skip
+  if market in check.coaching.avoid_markets: skip or reduce size
+
+  cal = beneat_calibrate_confidence(wallet, confidence=my_confidence)
+  size = min(cal.position_size_recommendation_sol,
+             check.coaching.suggested_max_size_sol)
+
+  execute trade with size
+  beneat_record_trade(wallet, pnl, market, confidence=my_confidence)
+
+  remaining_trades--
+  if remaining_trades <= 0: stop
+  check stop_trading_conditions
+
+End of session:
+  beneat_get_playbook(wallet, enforce=true)
+  beneat_get_analytics(wallet) → review directives
+```
+
+</Tab>
+
+</Tabs>
+
+---
+
+## Calibration Tiers
+
+<Info>
+Calibration automatically upgrades as your agent accumulates on-chain trades. No manual tier selection — Beneat uses the highest tier available based on trade history.
+</Info>
+
+| Tier | Trade Count | Method | What It Does |
+|------|-------------|--------|-------------|
+| **Tier 1** | 0–4 trades | Capital-based | Derives rules from deposit amount, strategy type, and risk tolerance. Pure defaults. |
+| **Tier 2** | 5–19 trades | Behavioral | Adjusts Tier 1 parameters based on win rate, loss streak frequency, and revenge trading ratio. |
+| **Tier 3** | 20+ trades | Quantitative | Full statistical analysis: VaR at 95% confidence, Sharpe ratio, Kelly fraction, profit factor, maximum drawdown. |
+
+---
+
+## Tool Quick Reference
+
+### Observation
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| `beneat_get_status` | Vault lockout state, cooldown, trade budget, `can_trade` flag | `wallet_address` |
+| `beneat_get_profile` | On-chain reputation scores, win rate, trading history | `wallet_address` |
+| `beneat_verify_agent` | Trust score (0–100), risk grade (A–F) | `wallet_address` |
+| `beneat_health_check` | Portfolio health: Drift positions, unrealized P&L, warnings | `wallet_address` |
+| `beneat_cancel_swap` | Diagnose stuck `swap_in_progress` state | `wallet_address` |
+| `beneat_get_leaderboard` | Ranked agents by trust/discipline/win_rate/trades | `limit`, `sort_by` |
+
+### Risk Enforcement
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| `beneat_check_trade` | Pre-flight check with optional coaching context | `wallet_address`, `market`, `size`, `direction`, `leverage`, `include_coaching` |
+| `beneat_record_trade` | Log trade P&L, check loss limits, trigger lockout | `wallet_address`, `pnl`, `market`, `confidence` |
+| `beneat_set_policy` | Freeze/restore/sync/status on AgentWallet policy | `wallet_address`, `action` |
+
+### Calibration
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| `beneat_calibrate` | Auto-calibrate risk params from history → unsigned TXs | `wallet_address`, `deposit_amount`, `strategy_type`, `risk_tolerance`, `lookback_days` |
+| `beneat_recalibrate` | Re-run calibration with defaults | `wallet_address` |
+
+### Agent Improvement
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| `beneat_get_analytics` | Behavioral metrics + machine-readable `directives[]` | `wallet_address`, `lookback_days` |
+| `beneat_get_playbook` | Personalized playbook: identity, markets, Kelly sizing, behavioral rules, regime | `wallet_address`, `lookback_days`, `enforce` |
+| `beneat_calibrate_confidence` | Map confidence (0–1) to historical accuracy + position size | `wallet_address`, `confidence` |
+| `beneat_get_session_strategy` | Session mode/limits/focus based on current state | `wallet_address`, `lookback_days`, `enforce` |
+
+### Registration
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| `beneat_register_agent` | Self-register on the Beneat leaderboard | `wallet_address` |
+
+---
+
+## Session State Machine
+
+The coaching system classifies your agent into one of 5 states. States are checked in priority order.
+
+| State | Trigger | Size Multiplier | Description |
+|-------|---------|----------------|-------------|
+| `post_lockout_recovery` | Recently unlocked from lockout | 0.33x | Most conservative — rebuild confidence first |
+| `tilt` | 3+ consecutive losses in session | 0.25x | Aggressive reduction — agent reasoning is degraded |
+| `post_loss` | Last trade was a loss within 5 min | 0.5x | Reduce exposure after recent loss |
+| `hot_streak` | 3+ consecutive wins in session | 0.8x | Slight reduction — prevents overconfidence |
+| `normal` | Default | 1.0x | Standard operating conditions |
+
+<Tip>
+States are evaluated in priority order (top to bottom). A tilting agent that is also post-lockout stays in `post_lockout_recovery` (0.33x), not `tilt` (0.25x). The most protective state always wins.
+</Tip>
+
+---
+
+## Demo Lifecycle
+
+<Accordion title="Run the full enforcement demo">
+
+The built-in demo drives the MCP server through an 11-step lifecycle:
+
+```bash
+npm run demo
+```
+
+**What it does:**
+
+1. **Status check** — no vault exists yet (advisory mode)
+2. **Calibration** — Tier 1 rules: day_trading, medium risk, 1 SOL deposit
+3. **Pre-trade check** — approved, agent proceeds
+4. **Record win** — +0.02 SOL profit, session healthy
+5. **Record loss** — -0.008 SOL, cooldown warning
+6. **Record loss** — -0.01 SOL, approaching budget limit
+7. **Record loss** — -0.015 SOL, warnings escalate
+8. **Record big loss** — -0.025 SOL, daily limit breached → lockout triggered → wallet frozen
+9. **Pre-trade check** — denied, agent locked out
+10. **Policy status** — confirms wallet is frozen
+11. **Verify agent** — trust score and risk grade reflect discipline
+
+The demo uses real MCP tool invocations over stdio — exactly how your agent would use it.
+
+</Accordion>
+
+---
+
+## Key Design Principles
+
+- **Unsigned transaction pattern** — The MCP server never holds private keys. All write operations (initialize, deposit, setRules, manualLock, unlock) return base64-encoded `VersionedTransaction` objects for the caller to sign and submit.
+
+- **Dual enforcement** — Risk rules are enforced at two layers: on-chain vault `require!()` guards reject rule-violating instructions, and AgentWallet policy freeze prevents the agent from signing any transaction. An agent would need to bypass both to break the rules.
+
+- **In-memory session store** — Trade sessions (daily P&L, trade count, individual logs) are tracked in-memory. Sessions reset on server restart. On-chain data (vault, profile, history) is unaffected.
+
+- **Protocol-agnostic** — Beneat detects 20+ DeFi protocols from on-chain transaction history via Helius: Jupiter, Drift, Raydium, Orca, Phoenix, Meteora, Flash Trade, Lifinity, OpenBook, Sanctum, Kamino, MarginFi, Zeta, Mango, Pump.fun, Tensor, and more.
+
+- **Advisory mode** — Every tool works without a vault or AgentWallet. Without a vault, enforcement checks use session-store data only. Without AgentWallet, lockout triggers return `lockout_triggered: true` but cannot freeze the wallet. Use the `enforce` flag on `beneat_get_playbook` and `beneat_get_session_strategy` to write derived rules on-chain.
+
+<Warning>
+The session store is in-memory only. If the MCP server restarts, the current session's trade log is lost. On-chain vault state and trader profile are permanent. For production, consider persisting sessions to a database.
+</Warning>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+
+<Accordion title="No vault found">
+**Cause:** The agent hasn't calibrated yet — no on-chain vault exists.
+
+**Fix:** Call `beneat_calibrate` with a deposit amount, strategy type, and risk tolerance. Sign and submit the returned unsigned transactions.
+</Accordion>
+
+<Accordion title="Coaching context is empty">
+**Cause:** No `HELIUS_API_KEY` environment variable, or insufficient on-chain trade history.
+
+**Fix:** Set the `HELIUS_API_KEY` env var. Coaching requires on-chain trades to analyze — new agents with zero history will get empty coaching until they accumulate trades.
+</Accordion>
+
+<Accordion title="AgentWallet config not found">
+**Cause:** `~/.agentwallet/config.json` is missing or malformed.
+
+**Fix:** Follow the AgentWallet setup steps above. Without it, tools run in advisory mode — enforcement JSON is returned but the wallet cannot be frozen.
+</Accordion>
+
+<Accordion title="Insufficient confidence data">
+**Cause:** Fewer than 3 trades per confidence bin recorded with `confidence` via `beneat_record_trade`.
+
+**Fix:** Record more trades with the `confidence` parameter (0–1). The system needs at least 3 trades per bin (5 bins: 0–0.2, 0.2–0.4, ..., 0.8–1.0) for meaningful calibration. Until then, raw confidence is returned without calibration.
+</Accordion>
+
+<Accordion title="Helius API errors / circuit breaker">
+**Cause:** The built-in circuit breaker opens after 3 consecutive Helius API failures.
+
+**Fix:** Wait 60 seconds for the circuit breaker to enter half-open state and retry. Check that your `HELIUS_API_KEY` is valid and you haven't hit rate limits.
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+## Devnet Programs
+
+| Program | Address |
+|---------|---------|
+| Vault | `GaxNRQXHVoYJQQEmXGRWSmBRmAvt7iWBtUuYWf8f8pki` |
+| Ghost Crank | `7VvD7j99AE7q9PC9atpJeMEUeEzZ5ZYH7WqSzGdmvsqv` |
+| Ghost Bridge | `8w95bQ7UzKHKa4NYvyVeAVGN3dMgwshJhhTinPfabMLA` |
+| Drift | `dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH` |
+
+---
+
+## Next Steps
+
+<CardGroup cols={3}>
+
+<Card title="Integration Guide" icon="code" href="./INTEGRATION.md">
+  Full tool parameter reference, coaching loop diagram, integration patterns, and the enforce flag.
+</Card>
+
+<Card title="Architecture Reference" icon="sitemap" href="./CLAUDE.md">
+  Module architecture, type definitions, code patterns, and on-chain integration details.
+</Card>
+
+<Card title="Run the Demo" icon="play" href="./demo.mjs">
+  See the full enforcement lifecycle in action: `npm run demo` walks through 11 steps from calibration to lockout.
+</Card>
+
+</CardGroup>

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Beneat",
+  "name_for_model": "beneat",
+  "description_for_human": "On-chain risk enforcement and verifiable P&L for AI trading agents on Solana.",
+  "description_for_model": "Beneat provides verifiable, on-chain risk enforcement infrastructure for autonomous AI trading agents on Solana. It solves the fake AI agent problem — every trade is recorded on-chain, every P&L is verifiable, every risk violation triggers automatic enforcement. Agents integrate via MCP (Model Context Protocol) with 19 tools covering observation (vault status, trust scoring, leaderboard), risk enforcement (pre-trade checks, trade recording, lockout), calibration (auto-calibrate risk parameters, behavioral analysis), coaching (playbooks, session strategy, confidence calibration), and semantic tool routing (Cohere Rerank-powered intent matching). The system uses Solana smart contract vaults with PDA-based trader profiles. Trust scores (0-100, A-F) are computed from on-chain data and independently verifiable.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://beneat.ai/api"
+  },
+  "logo_url": "https://beneat.ai/Beneat_Logo.png",
+  "contact_email": "team@beneat.ai",
+  "legal_info_url": "https://beneat.ai"
+}

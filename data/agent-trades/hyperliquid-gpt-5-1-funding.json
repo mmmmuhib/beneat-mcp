@@ -1,0 +1,4166 @@
+{
+  "wallet": "0xb158dedfbe2142ba595f082344fed4438b636a3c",
+  "model": "GPT 5.1",
+  "fetchedAt": "2026-02-10",
+  "totalFundingUsdc": -120.31925100000005,
+  "payments": [
+    {
+      "time": 1762992000000,
+      "coin": "BTC",
+      "usdc": 0.013451,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1762992000000,
+      "coin": "ETH",
+      "usdc": 0.051111,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763078400000,
+      "coin": "BTC",
+      "usdc": 0.038593,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763078400000,
+      "coin": "ETH",
+      "usdc": -0.008645,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763078400000,
+      "coin": "SOL",
+      "usdc": -0.001065,
+      "fundingRate": -0.0000749548
+    },
+    {
+      "time": 1763164800000,
+      "coin": "SOL",
+      "usdc": 0.000156,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763337600000,
+      "coin": "xyz:NVDA",
+      "usdc": 0.004461,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763337600000,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.006871,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763424000000,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.024794,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763424000000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.004027,
+      "fundingRate": -7.079e-7
+    },
+    {
+      "time": 1763424000000,
+      "coin": "xyz:PLTR",
+      "usdc": -0.045297,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763424000000,
+      "coin": "xyz:TSLA",
+      "usdc": 0.024568,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763424000000,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.202695,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763510400000,
+      "coin": "xyz:GOOGL",
+      "usdc": -8.415057,
+      "fundingRate": 0.0003486656
+    },
+    {
+      "time": 1763510400000,
+      "coin": "xyz:NVDA",
+      "usdc": 2.942303,
+      "fundingRate": 0.0002006563
+    },
+    {
+      "time": 1763510400000,
+      "coin": "xyz:PLTR",
+      "usdc": -0.612737,
+      "fundingRate": 0.0001546314
+    },
+    {
+      "time": 1763510400000,
+      "coin": "xyz:TSLA",
+      "usdc": 0.03445,
+      "fundingRate": 0.0000054044
+    },
+    {
+      "time": 1763510400000,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.015743,
+      "fundingRate": 0.00001595
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:AMZN",
+      "usdc": 0.223572,
+      "fundingRate": -0.0000101838
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:GOOGL",
+      "usdc": 3.960772,
+      "fundingRate": 0.0000576432
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:MSFT",
+      "usdc": 7.076401,
+      "fundingRate": 0.0000392382
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:NVDA",
+      "usdc": 1.496394,
+      "fundingRate": 0.0000093579
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:PLTR",
+      "usdc": -1.727901,
+      "fundingRate": -0.0000751188
+    },
+    {
+      "time": 1763596800000,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.573417,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763683200000,
+      "coin": "xyz:AMZN",
+      "usdc": 0.087563,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763683200000,
+      "coin": "xyz:GOOGL",
+      "usdc": 12.689884,
+      "fundingRate": 0.0001192216
+    },
+    {
+      "time": 1763683200000,
+      "coin": "xyz:NVDA",
+      "usdc": -2.933723,
+      "fundingRate": -0.0000140104
+    },
+    {
+      "time": 1763683200000,
+      "coin": "xyz:PLTR",
+      "usdc": 18.900488,
+      "fundingRate": -0.0000584066
+    },
+    {
+      "time": 1763683200000,
+      "coin": "xyz:TSLA",
+      "usdc": 0.024641,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:AMZN",
+      "usdc": -0.168425,
+      "fundingRate": 0.0003044776
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:GOOGL",
+      "usdc": 1.393686,
+      "fundingRate": 0.00000793
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:MSFT",
+      "usdc": 0.333301,
+      "fundingRate": -0.0000333129
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:NVDA",
+      "usdc": -3.913539,
+      "fundingRate": -0.0000233441
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:PLTR",
+      "usdc": 22.069683,
+      "fundingRate": -0.000121869
+    },
+    {
+      "time": 1763769600000,
+      "coin": "xyz:TSLA",
+      "usdc": -4.531658,
+      "fundingRate": -0.0000318426
+    },
+    {
+      "time": 1763856000000,
+      "coin": "xyz:AMZN",
+      "usdc": 0.099924,
+      "fundingRate": -0.0000294456
+    },
+    {
+      "time": 1763856000000,
+      "coin": "xyz:GOOGL",
+      "usdc": 9.213316,
+      "fundingRate": 0.000033047
+    },
+    {
+      "time": 1763856000000,
+      "coin": "xyz:NVDA",
+      "usdc": 24.179894,
+      "fundingRate": 0.0000727603
+    },
+    {
+      "time": 1763856000000,
+      "coin": "xyz:PLTR",
+      "usdc": 3.718011,
+      "fundingRate": 0.0000203981
+    },
+    {
+      "time": 1763856000000,
+      "coin": "xyz:TSLA",
+      "usdc": 14.330756,
+      "fundingRate": 0.0000915906
+    },
+    {
+      "time": 1763942400000,
+      "coin": "xyz:GOOGL",
+      "usdc": 1.363042,
+      "fundingRate": 0.0001244613
+    },
+    {
+      "time": 1763942400000,
+      "coin": "xyz:NVDA",
+      "usdc": 6.809445,
+      "fundingRate": 0.0000101832
+    },
+    {
+      "time": 1763942400000,
+      "coin": "xyz:PLTR",
+      "usdc": -4.334555,
+      "fundingRate": -0.0000216223
+    },
+    {
+      "time": 1763942400000,
+      "coin": "xyz:TSLA",
+      "usdc": 0.965936,
+      "fundingRate": 0.0000098032
+    },
+    {
+      "time": 1763942400000,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.945392,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764028800000,
+      "coin": "xyz:MSFT",
+      "usdc": -0.214839,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764028800000,
+      "coin": "xyz:NVDA",
+      "usdc": 12.600402,
+      "fundingRate": 0.0000272816
+    },
+    {
+      "time": 1764028800000,
+      "coin": "xyz:PLTR",
+      "usdc": -0.009809,
+      "fundingRate": 0.0000109655
+    },
+    {
+      "time": 1764028800000,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.250009,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:AMZN",
+      "usdc": -0.012946,
+      "fundingRate": 0.0000016703
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:GOOGL",
+      "usdc": -2.324192,
+      "fundingRate": 0.000035131
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:MSFT",
+      "usdc": -10.011982,
+      "fundingRate": 0.0000223979
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:NVDA",
+      "usdc": -2.108441,
+      "fundingRate": 0.0000318278
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:PLTR",
+      "usdc": 1.796283,
+      "fundingRate": -0.000010333
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:TSLA",
+      "usdc": -0.113168,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764115200000,
+      "coin": "xyz:XYZ100",
+      "usdc": -10.221932,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.944248,
+      "fundingRate": 0.000003786
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:MSFT",
+      "usdc": -5.570523,
+      "fundingRate": 0.0000123553
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.421163,
+      "fundingRate": 0.0000211392
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:PLTR",
+      "usdc": 13.370497,
+      "fundingRate": -0.0000313642
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:TSLA",
+      "usdc": 1.27315,
+      "fundingRate": -0.0000730773
+    },
+    {
+      "time": 1764201600000,
+      "coin": "xyz:XYZ100",
+      "usdc": -8.089796,
+      "fundingRate": 0.0000075853
+    },
+    {
+      "time": 1764288000000,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.881767,
+      "fundingRate": 0.0000171509
+    },
+    {
+      "time": 1764288000000,
+      "coin": "xyz:MSFT",
+      "usdc": -7.496297,
+      "fundingRate": 0.0000157535
+    },
+    {
+      "time": 1764288000000,
+      "coin": "xyz:NVDA",
+      "usdc": -1.991498,
+      "fundingRate": 0.0000319284
+    },
+    {
+      "time": 1764288000000,
+      "coin": "xyz:PLTR",
+      "usdc": -1.403555,
+      "fundingRate": 0.0000055222
+    },
+    {
+      "time": 1764288000000,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.841086,
+      "fundingRate": 6.45e-7
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:AMZN",
+      "usdc": 0.370533,
+      "fundingRate": -0.0000344701
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.768526,
+      "fundingRate": 0.0000105503
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:MSFT",
+      "usdc": 2.217596,
+      "fundingRate": -0.000008507
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:NVDA",
+      "usdc": 0.347348,
+      "fundingRate": -0.0000122311
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:PLTR",
+      "usdc": -15.887584,
+      "fundingRate": 0.0000474511
+    },
+    {
+      "time": 1764374400000,
+      "coin": "xyz:XYZ100",
+      "usdc": -3.352588,
+      "fundingRate": 0.000002598
+    },
+    {
+      "time": 1764460800000,
+      "coin": "xyz:GOOGL",
+      "usdc": -5.589401,
+      "fundingRate": 0.0000289969
+    },
+    {
+      "time": 1764460800000,
+      "coin": "xyz:MSFT",
+      "usdc": -1.208046,
+      "fundingRate": 0.0000275156
+    },
+    {
+      "time": 1764460800000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.168624,
+      "fundingRate": 0.0000374094
+    },
+    {
+      "time": 1764460800000,
+      "coin": "xyz:PLTR",
+      "usdc": -0.669315,
+      "fundingRate": 0.0000136476
+    },
+    {
+      "time": 1764460800000,
+      "coin": "xyz:XYZ100",
+      "usdc": -24.770515,
+      "fundingRate": 0.0000143602
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:GOOGL",
+      "usdc": 3.568349,
+      "fundingRate": -0.0000419445
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:MSFT",
+      "usdc": 0.615524,
+      "fundingRate": -0.0000115347
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.735243,
+      "fundingRate": 0.0000101952
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:PLTR",
+      "usdc": 1.298445,
+      "fundingRate": -0.0000051425
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:TSLA",
+      "usdc": -0.137567,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764547200000,
+      "coin": "xyz:XYZ100",
+      "usdc": 7.58885,
+      "fundingRate": -0.0000038669
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:AMZN",
+      "usdc": -0.155,
+      "fundingRate": 0.0000295486
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.886879,
+      "fundingRate": 0.0000441983
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:MSFT",
+      "usdc": -0.442373,
+      "fundingRate": 0.0000121627
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.324756,
+      "fundingRate": 0.0000080124
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:PLTR",
+      "usdc": 0.427844,
+      "fundingRate": 0.0000183375
+    },
+    {
+      "time": 1764633600000,
+      "coin": "xyz:XYZ100",
+      "usdc": -18.300624,
+      "fundingRate": 0.0000090724
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:AMZN",
+      "usdc": 0.038386,
+      "fundingRate": 0.0000236224
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.338798,
+      "fundingRate": 0.0000150964
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:MSFT",
+      "usdc": -2.011816,
+      "fundingRate": 0.0000134896
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:NVDA",
+      "usdc": -2.440001,
+      "fundingRate": 0.0000578575
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:TSLA",
+      "usdc": -0.208011,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764720000000,
+      "coin": "xyz:XYZ100",
+      "usdc": -25.334379,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:GOOGL",
+      "usdc": -8.787119,
+      "fundingRate": 0.0000453414
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:MSFT",
+      "usdc": -5.597106,
+      "fundingRate": 0.000017945
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.211243,
+      "fundingRate": 0.0000125073
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:PLTR",
+      "usdc": -0.096912,
+      "fundingRate": 0.0000057105
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:TSLA",
+      "usdc": -0.164772,
+      "fundingRate": 0.000066008
+    },
+    {
+      "time": 1764806400000,
+      "coin": "xyz:XYZ100",
+      "usdc": -24.175341,
+      "fundingRate": 0.0000119269
+    },
+    {
+      "time": 1764892800002,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.055298,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764892800002,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163364,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764892800002,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100301,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764896400035,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.056618,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764896400035,
+      "coin": "xyz:MSFT",
+      "usdc": -0.144969,
+      "fundingRate": 0.00001108
+    },
+    {
+      "time": 1764896400035,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100269,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764900000021,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.057773,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764900000021,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163701,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764900000021,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.25427,
+      "fundingRate": -0.0000316515
+    },
+    {
+      "time": 1764903600048,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.620712,
+      "fundingRate": 0.0000073334
+    },
+    {
+      "time": 1764903600048,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163867,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764903600048,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.098689,
+      "fundingRate": 0.0000122787
+    },
+    {
+      "time": 1764907200066,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058557,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764907200066,
+      "coin": "xyz:MSFT",
+      "usdc": -0.032434,
+      "fundingRate": 0.0000024748
+    },
+    {
+      "time": 1764907200066,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100563,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764910800044,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.267418,
+      "fundingRate": -0.0000149599
+    },
+    {
+      "time": 1764910800044,
+      "coin": "xyz:MSFT",
+      "usdc": 0.201128,
+      "fundingRate": -0.0000153493
+    },
+    {
+      "time": 1764910800044,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100591,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764914400033,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.571593,
+      "fundingRate": 0.0000067436
+    },
+    {
+      "time": 1764914400033,
+      "coin": "xyz:MSFT",
+      "usdc": -0.062333,
+      "fundingRate": 0.0000047572
+    },
+    {
+      "time": 1764914400033,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.227893,
+      "fundingRate": 0.0000282925
+    },
+    {
+      "time": 1764918000050,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.839166,
+      "fundingRate": -0.0000099047
+    },
+    {
+      "time": 1764918000050,
+      "coin": "xyz:NVDA",
+      "usdc": -0.131486,
+      "fundingRate": 0.0000305193
+    },
+    {
+      "time": 1764918000050,
+      "coin": "xyz:MSFT",
+      "usdc": 0.610054,
+      "fundingRate": -0.0000465568
+    },
+    {
+      "time": 1764918000050,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100784,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764921600032,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.175397,
+      "fundingRate": 0.0000020693
+    },
+    {
+      "time": 1764921600032,
+      "coin": "xyz:PLTR",
+      "usdc": -0.021899,
+      "fundingRate": 0.0000031291
+    },
+    {
+      "time": 1764921600032,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163745,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764921600032,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100743,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764925200019,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.246475,
+      "fundingRate": 0.0000029077
+    },
+    {
+      "time": 1764925200019,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163898,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764925200019,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.28843,
+      "fundingRate": 0.000035761
+    },
+    {
+      "time": 1764928800035,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059341,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764928800035,
+      "coin": "xyz:MSFT",
+      "usdc": -0.16364,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764928800035,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.10079,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764932400077,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059258,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764932400077,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163942,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764932400077,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100698,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764936000030,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059341,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764936000030,
+      "coin": "xyz:PLTR",
+      "usdc": -0.014415,
+      "fundingRate": 0.000003603
+    },
+    {
+      "time": 1764936000030,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164075,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764936000030,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100803,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764939600062,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058722,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764939600062,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163915,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764939600062,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100702,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764943200047,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.953575,
+      "fundingRate": 0.0000112973
+    },
+    {
+      "time": 1764943200047,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163497,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764943200047,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100553,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764946800036,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.110832,
+      "fundingRate": -0.0000013042
+    },
+    {
+      "time": 1764946800036,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163578,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764946800036,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.123966,
+      "fundingRate": 0.0000152392
+    },
+    {
+      "time": 1764950400000,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.602763,
+      "fundingRate": -0.0000188931
+    },
+    {
+      "time": 1764950400000,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163718,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764950400000,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100948,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764954000026,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.97291,
+      "fundingRate": 0.0000114748
+    },
+    {
+      "time": 1764954000026,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163143,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764954000026,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101636,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764957600054,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059877,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764957600054,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163354,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764957600054,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101261,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764961200086,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.490821,
+      "fundingRate": 0.0000057898
+    },
+    {
+      "time": 1764961200086,
+      "coin": "xyz:PLTR",
+      "usdc": 0.070935,
+      "fundingRate": -0.000014191
+    },
+    {
+      "time": 1764961200086,
+      "coin": "xyz:MSFT",
+      "usdc": -0.16364,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764961200086,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101115,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764964800004,
+      "coin": "xyz:XYZ100",
+      "usdc": 2.021718,
+      "fundingRate": -0.0000238382
+    },
+    {
+      "time": 1764964800004,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163769,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764964800004,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101213,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764968400036,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.888719,
+      "fundingRate": 0.000010481
+    },
+    {
+      "time": 1764968400036,
+      "coin": "xyz:PLTR",
+      "usdc": -0.041292,
+      "fundingRate": 0.0000063619
+    },
+    {
+      "time": 1764968400036,
+      "coin": "xyz:MSFT",
+      "usdc": -0.1642,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764968400036,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101469,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764972000035,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.383964,
+      "fundingRate": -0.000016319
+    },
+    {
+      "time": 1764972000035,
+      "coin": "xyz:PLTR",
+      "usdc": 0.021072,
+      "fundingRate": -0.0000124672
+    },
+    {
+      "time": 1764972000035,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163942,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764972000035,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101125,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764975600012,
+      "coin": "xyz:XYZ100",
+      "usdc": 2.435938,
+      "fundingRate": -0.000028738
+    },
+    {
+      "time": 1764975600012,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163704,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764975600012,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101077,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764979200052,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059341,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764979200052,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163874,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764979200052,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101175,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764982800110,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059753,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764982800110,
+      "coin": "xyz:MSFT",
+      "usdc": -0.184774,
+      "fundingRate": 0.0000140994
+    },
+    {
+      "time": 1764982800110,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101207,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764986400011,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.060125,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764986400011,
+      "coin": "xyz:MSFT",
+      "usdc": -1.126686,
+      "fundingRate": 0.0000859002
+    },
+    {
+      "time": 1764986400011,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101207,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764990000053,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.833903,
+      "fundingRate": -0.0000216338
+    },
+    {
+      "time": 1764990000053,
+      "coin": "xyz:MSFT",
+      "usdc": -0.454141,
+      "fundingRate": 0.0000346151
+    },
+    {
+      "time": 1764990000053,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764993600025,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059795,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764993600025,
+      "coin": "xyz:MSFT",
+      "usdc": -0.274001,
+      "fundingRate": 0.0000208817
+    },
+    {
+      "time": 1764993600025,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1764997200044,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.017611,
+      "fundingRate": 2.078e-7
+    },
+    {
+      "time": 1764997200044,
+      "coin": "xyz:MSFT",
+      "usdc": -0.509084,
+      "fundingRate": 0.0000387868
+    },
+    {
+      "time": 1764997200044,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765000800010,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059341,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765000800010,
+      "coin": "xyz:MSFT",
+      "usdc": 0.007991,
+      "fundingRate": -6.091e-7
+    },
+    {
+      "time": 1765000800010,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765004400052,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059258,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765004400052,
+      "coin": "xyz:MSFT",
+      "usdc": -0.688799,
+      "fundingRate": 0.0000524585
+    },
+    {
+      "time": 1765004400052,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101197,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765008000049,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059341,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765008000049,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164129,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765008000049,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.048097,
+      "fundingRate": -0.0000059428
+    },
+    {
+      "time": 1765011600050,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.81886,
+      "fundingRate": 0.0000096643
+    },
+    {
+      "time": 1765011600050,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164149,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765011600050,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.215418,
+      "fundingRate": -0.0000266294
+    },
+    {
+      "time": 1765015200024,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059052,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765015200024,
+      "coin": "xyz:MSFT",
+      "usdc": -0.26283,
+      "fundingRate": 0.0000200083
+    },
+    {
+      "time": 1765015200024,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101106,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765018800005,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059176,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765018800005,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765018800005,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101103,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765022400038,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059052,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765022400038,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164204,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765022400038,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101103,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765026000034,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059093,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765026000034,
+      "coin": "xyz:MSFT",
+      "usdc": -0.118316,
+      "fundingRate": 0.0000090064
+    },
+    {
+      "time": 1765026000034,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101103,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765029600047,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058887,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765029600047,
+      "coin": "xyz:MSFT",
+      "usdc": 1.032133,
+      "fundingRate": -0.0000785986
+    },
+    {
+      "time": 1765029600047,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.074056,
+      "fundingRate": 0.0000091572
+    },
+    {
+      "time": 1765033200028,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058722,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765033200028,
+      "coin": "xyz:MSFT",
+      "usdc": 1.098232,
+      "fundingRate": -0.0000836823
+    },
+    {
+      "time": 1765033200028,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.052226,
+      "fundingRate": 0.0000064587
+    },
+    {
+      "time": 1765036800107,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058681,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765036800107,
+      "coin": "xyz:MSFT",
+      "usdc": 1.419672,
+      "fundingRate": -0.0001082267
+    },
+    {
+      "time": 1765036800107,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101071,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765040400025,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.375779,
+      "fundingRate": -0.0000044383
+    },
+    {
+      "time": 1765040400025,
+      "coin": "xyz:MSFT",
+      "usdc": 0.683402,
+      "fundingRate": -0.0000521188
+    },
+    {
+      "time": 1765040400025,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101068,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765044000046,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058475,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765044000046,
+      "coin": "xyz:MSFT",
+      "usdc": 0.225121,
+      "fundingRate": -0.0000171697
+    },
+    {
+      "time": 1765044000046,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.017778,
+      "fundingRate": -0.000002199
+    },
+    {
+      "time": 1765047600065,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058557,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765047600065,
+      "coin": "xyz:MSFT",
+      "usdc": 0.99894,
+      "fundingRate": -0.000076216
+    },
+    {
+      "time": 1765047600065,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.277178,
+      "fundingRate": -0.0000342993
+    },
+    {
+      "time": 1765051200038,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058598,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765051200038,
+      "coin": "xyz:MSFT",
+      "usdc": 1.170004,
+      "fundingRate": -0.0000892991
+    },
+    {
+      "time": 1765051200038,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.05152,
+      "fundingRate": -0.0000063766
+    },
+    {
+      "time": 1765054800067,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058598,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765054800067,
+      "coin": "xyz:MSFT",
+      "usdc": 2.5233,
+      "fundingRate": -0.0001927917
+    },
+    {
+      "time": 1765054800067,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100983,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765058400120,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058887,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765058400120,
+      "coin": "xyz:MSFT",
+      "usdc": 3.311488,
+      "fundingRate": -0.000253434
+    },
+    {
+      "time": 1765058400120,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100976,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765062000058,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.470225,
+      "fundingRate": 0.0000173483
+    },
+    {
+      "time": 1765062000058,
+      "coin": "xyz:MSFT",
+      "usdc": 1.041897,
+      "fundingRate": -0.0000797881
+    },
+    {
+      "time": 1765062000058,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.219547,
+      "fundingRate": -0.0000271889
+    },
+    {
+      "time": 1765065600005,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059588,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765065600005,
+      "coin": "xyz:MSFT",
+      "usdc": -1.306548,
+      "fundingRate": 0.0000999447
+    },
+    {
+      "time": 1765065600005,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100926,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765069200048,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059795,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765069200048,
+      "coin": "xyz:MSFT",
+      "usdc": -0.35156,
+      "fundingRate": 0.0000268776
+    },
+    {
+      "time": 1765069200048,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100948,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765072800012,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.059671,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765072800012,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163575,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765072800012,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.10098,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765076400047,
+      "coin": "xyz:XYZ100",
+      "usdc": 3.493815,
+      "fundingRate": -0.0000412391
+    },
+    {
+      "time": 1765076400047,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163606,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765076400047,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100989,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765080000147,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058928,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765080000147,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163623,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765080000147,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.084173,
+      "fundingRate": -0.0000104222
+    },
+    {
+      "time": 1765083600081,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058763,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765083600081,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163633,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765083600081,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.084062,
+      "fundingRate": 0.0000104104
+    },
+    {
+      "time": 1765087200041,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058846,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765087200041,
+      "coin": "xyz:MSFT",
+      "usdc": -0.876881,
+      "fundingRate": 0.000066931
+    },
+    {
+      "time": 1765087200041,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100942,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765090800003,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058805,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765090800003,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163748,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765090800003,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.078505,
+      "fundingRate": -0.000009725
+    },
+    {
+      "time": 1765094400025,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.971839,
+      "fundingRate": -0.0000114773
+    },
+    {
+      "time": 1765094400025,
+      "coin": "xyz:MSFT",
+      "usdc": -0.57011,
+      "fundingRate": 0.0000434958
+    },
+    {
+      "time": 1765094400025,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.10001,
+      "fundingRate": 0.0000123912
+    },
+    {
+      "time": 1765098000033,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.05831,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765098000033,
+      "coin": "xyz:MSFT",
+      "usdc": -0.531092,
+      "fundingRate": 0.0000405005
+    },
+    {
+      "time": 1765098000033,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100882,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765101600096,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.05831,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765101600096,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163959,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765101600096,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100878,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765105200107,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058268,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765105200107,
+      "coin": "xyz:MSFT",
+      "usdc": 0.364762,
+      "fundingRate": -0.0000278187
+    },
+    {
+      "time": 1765105200107,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100878,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765108800022,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058145,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765108800022,
+      "coin": "xyz:MSFT",
+      "usdc": 0.118088,
+      "fundingRate": -0.0000090081
+    },
+    {
+      "time": 1765108800022,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100878,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765112400015,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058145,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765112400015,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163847,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765112400015,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100882,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765116000007,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058103,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765116000007,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163843,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765116000007,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.361016,
+      "fundingRate": 0.0000447086
+    },
+    {
+      "time": 1765119600003,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058021,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765119600003,
+      "coin": "xyz:MSFT",
+      "usdc": -0.163867,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765119600003,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.177785,
+      "fundingRate": 0.0000220082
+    },
+    {
+      "time": 1765123200031,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058062,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765123200031,
+      "coin": "xyz:MSFT",
+      "usdc": -0.797869,
+      "fundingRate": 0.0000608282
+    },
+    {
+      "time": 1765123200031,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.654826,
+      "fundingRate": -0.0000811376
+    },
+    {
+      "time": 1765126800002,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.957884,
+      "fundingRate": -0.0000231423
+    },
+    {
+      "time": 1765126800002,
+      "coin": "xyz:MSFT",
+      "usdc": -2.583948,
+      "fundingRate": 0.0001967309
+    },
+    {
+      "time": 1765126800002,
+      "coin": "xyz:GOOGL",
+      "usdc": 1.47491,
+      "fundingRate": -0.0001830727
+    },
+    {
+      "time": 1765130400040,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.057732,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765130400040,
+      "coin": "xyz:MSFT",
+      "usdc": -1.822904,
+      "fundingRate": 0.0001386075
+    },
+    {
+      "time": 1765130400040,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.100695,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765134000096,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.057691,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765134000096,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164448,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765134000096,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.299795,
+      "fundingRate": 0.0000371969
+    },
+    {
+      "time": 1765137600036,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.057691,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765137600036,
+      "coin": "xyz:MSFT",
+      "usdc": 0.180492,
+      "fundingRate": -0.0000137226
+    },
+    {
+      "time": 1765137600036,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.122841,
+      "fundingRate": 0.0001391279
+    },
+    {
+      "time": 1765141200009,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.05798,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765141200009,
+      "coin": "xyz:MSFT",
+      "usdc": -0.130222,
+      "fundingRate": 0.0000099015
+    },
+    {
+      "time": 1765141200009,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.95994,
+      "fundingRate": 0.0002423345
+    },
+    {
+      "time": 1765144800031,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.058145,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765144800031,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164387,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765144800031,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.319839,
+      "fundingRate": 0.0001629305
+    },
+    {
+      "time": 1765148400067,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.60555,
+      "fundingRate": 0.0000071551
+    },
+    {
+      "time": 1765148400067,
+      "coin": "xyz:MSFT",
+      "usdc": 1.53531,
+      "fundingRate": -0.0001168678
+    },
+    {
+      "time": 1765148400067,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101273,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765152000031,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.477852,
+      "fundingRate": -0.0000056311
+    },
+    {
+      "time": 1765152000031,
+      "coin": "xyz:MSFT",
+      "usdc": 0.612091,
+      "fundingRate": -0.0000466136
+    },
+    {
+      "time": 1765152000031,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.087855,
+      "fundingRate": 0.0000108452
+    },
+    {
+      "time": 1765155600152,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.006732,
+      "fundingRate": 0.0000118631
+    },
+    {
+      "time": 1765155600152,
+      "coin": "xyz:MSFT",
+      "usdc": 1.353746,
+      "fundingRate": -0.0001031774
+    },
+    {
+      "time": 1765155600152,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.001102,
+      "fundingRate": -1.362e-7
+    },
+    {
+      "time": 1765159200010,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.23932,
+      "fundingRate": 0.0000028178
+    },
+    {
+      "time": 1765159200010,
+      "coin": "xyz:MSFT",
+      "usdc": 0.007044,
+      "fundingRate": -5.368e-7
+    },
+    {
+      "time": 1765159200010,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.200881,
+      "fundingRate": -0.0000247211
+    },
+    {
+      "time": 1765162800024,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.853418,
+      "fundingRate": -0.0000218105
+    },
+    {
+      "time": 1765162800024,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164098,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765162800024,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101905,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765166400007,
+      "coin": "xyz:XYZ100",
+      "usdc": 2.568542,
+      "fundingRate": -0.0000302165
+    },
+    {
+      "time": 1765166400007,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164292,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765166400007,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.066474,
+      "fundingRate": 0.0000081527
+    },
+    {
+      "time": 1765170000036,
+      "coin": "xyz:XYZ100",
+      "usdc": 2.505469,
+      "fundingRate": -0.0000294642
+    },
+    {
+      "time": 1765170000036,
+      "coin": "xyz:MSFT",
+      "usdc": -0.115065,
+      "fundingRate": 0.0000087542
+    },
+    {
+      "time": 1765170000036,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.007503,
+      "fundingRate": -9.2e-7
+    },
+    {
+      "time": 1765173600056,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.357931,
+      "fundingRate": 0.0000042099
+    },
+    {
+      "time": 1765173600056,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164323,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765173600056,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.496207,
+      "fundingRate": -0.0000608437
+    },
+    {
+      "time": 1765177200006,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.944987,
+      "fundingRate": 0.0000111165
+    },
+    {
+      "time": 1765177200006,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164452,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765177200006,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101943,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765180800113,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.872823,
+      "fundingRate": 0.0000102616
+    },
+    {
+      "time": 1765180800113,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164496,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765180800113,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.366027,
+      "fundingRate": -0.0000449064
+    },
+    {
+      "time": 1765184400062,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.061981,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765184400062,
+      "coin": "xyz:MSFT",
+      "usdc": -0.206351,
+      "fundingRate": 0.0000156994
+    },
+    {
+      "time": 1765184400062,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.689155,
+      "fundingRate": -0.0000845943
+    },
+    {
+      "time": 1765188000041,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.833338,
+      "fundingRate": 0.0000098092
+    },
+    {
+      "time": 1765188000041,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164363,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765188000041,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101718,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765191600085,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.322078,
+      "fundingRate": 0.0000037882
+    },
+    {
+      "time": 1765191600085,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164404,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765191600085,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.140105,
+      "fundingRate": 0.0001404582
+    },
+    {
+      "time": 1765195200019,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.502323,
+      "fundingRate": 0.0000059126
+    },
+    {
+      "time": 1765195200019,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164326,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765195200019,
+      "coin": "xyz:GOOGL",
+      "usdc": -1.01535,
+      "fundingRate": 0.0001256714
+    },
+    {
+      "time": 1765198800077,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.337263,
+      "fundingRate": 0.0000039651
+    },
+    {
+      "time": 1765198800077,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164401,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765198800077,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101302,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765202400056,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.33274,
+      "fundingRate": 0.000003911
+    },
+    {
+      "time": 1765202400056,
+      "coin": "xyz:MSFT",
+      "usdc": -0.164224,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765202400056,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.101381,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765206000011,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.176063,
+      "fundingRate": -0.0000020748
+    },
+    {
+      "time": 1765206000011,
+      "coin": "xyz:MSFT",
+      "usdc": -0.166158,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765206000011,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.170041,
+      "fundingRate": 0.000021172
+    },
+    {
+      "time": 1765209600037,
+      "coin": "xyz:XYZ100",
+      "usdc": 2.065134,
+      "fundingRate": -0.0000244147
+    },
+    {
+      "time": 1765209600037,
+      "coin": "xyz:NVDA",
+      "usdc": -0.058712,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765209600037,
+      "coin": "xyz:PLTR",
+      "usdc": 0.078177,
+      "fundingRate": -0.0000086969
+    },
+    {
+      "time": 1765209600037,
+      "coin": "xyz:MSFT",
+      "usdc": -0.038165,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765209600037,
+      "coin": "xyz:GOOGL",
+      "usdc": -0.099764,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765213200037,
+      "coin": "xyz:XYZ100",
+      "usdc": 1.78899,
+      "fundingRate": -0.0000211674
+    },
+    {
+      "time": 1765213200037,
+      "coin": "xyz:NVDA",
+      "usdc": -0.043735,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765213200037,
+      "coin": "xyz:MSFT",
+      "usdc": -0.15,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765216800053,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.676967,
+      "fundingRate": -0.0000079971
+    },
+    {
+      "time": 1765216800053,
+      "coin": "xyz:TSLA",
+      "usdc": 0.043794,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765216800053,
+      "coin": "xyz:MSFT",
+      "usdc": -0.149991,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765216800053,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.273112,
+      "fundingRate": 0.0000365625
+    },
+    {
+      "time": 1765220400047,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.812527,
+      "fundingRate": 0.0000096319
+    },
+    {
+      "time": 1765220400047,
+      "coin": "xyz:TSLA",
+      "usdc": 0.043492,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765220400047,
+      "coin": "xyz:MSFT",
+      "usdc": -0.149581,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765220400047,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.566956,
+      "fundingRate": 0.0000757213
+    },
+    {
+      "time": 1765224000021,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.054473,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765224000021,
+      "coin": "xyz:TSLA",
+      "usdc": 0.04361,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765224000021,
+      "coin": "xyz:NVDA",
+      "usdc": -0.397205,
+      "fundingRate": 0.0000398485
+    },
+    {
+      "time": 1765224000021,
+      "coin": "xyz:MSFT",
+      "usdc": -0.149578,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765224000021,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.285134,
+      "fundingRate": 0.0000381318
+    },
+    {
+      "time": 1765227600150,
+      "coin": "xyz:XYZ100",
+      "usdc": -1.057526,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765227600150,
+      "coin": "xyz:TSLA",
+      "usdc": 0.043843,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765227600150,
+      "coin": "xyz:NVDA",
+      "usdc": -0.271076,
+      "fundingRate": 0.0000449543
+    },
+    {
+      "time": 1765227600150,
+      "coin": "xyz:MSFT",
+      "usdc": -0.149911,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765227600150,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.257464,
+      "fundingRate": 0.0000343249
+    },
+    {
+      "time": 1765231200004,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.215129,
+      "fundingRate": 0.0000025388
+    },
+    {
+      "time": 1765231200004,
+      "coin": "xyz:TSLA",
+      "usdc": 0.043882,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765231200004,
+      "coin": "xyz:MSFT",
+      "usdc": -0.149493,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765231200004,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.093801,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765234800059,
+      "coin": "xyz:NVDA",
+      "usdc": -0.118937,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765234800059,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.408276,
+      "fundingRate": 0.0000491016
+    },
+    {
+      "time": 1765238400087,
+      "coin": "xyz:NVDA",
+      "usdc": -0.124897,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765238400087,
+      "coin": "xyz:MSFT",
+      "usdc": -0.250298,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765238400087,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.167129,
+      "fundingRate": 0.0000200834
+    },
+    {
+      "time": 1765242000022,
+      "coin": "xyz:TSLA",
+      "usdc": 0.003509,
+      "fundingRate": 0.0000199634
+    },
+    {
+      "time": 1765242000022,
+      "coin": "xyz:MSFT",
+      "usdc": -0.250374,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765242000022,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.313209,
+      "fundingRate": 0.0000376587
+    },
+    {
+      "time": 1765245600045,
+      "coin": "xyz:TSLA",
+      "usdc": 0.210152,
+      "fundingRate": 0.0000405988
+    },
+    {
+      "time": 1765245600045,
+      "coin": "xyz:NVDA",
+      "usdc": -0.09086,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765245600045,
+      "coin": "xyz:MSFT",
+      "usdc": -0.250272,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765245600045,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.627787,
+      "fundingRate": 0.0000755519
+    },
+    {
+      "time": 1765249200064,
+      "coin": "xyz:TSLA",
+      "usdc": 0.201412,
+      "fundingRate": 0.0000389254
+    },
+    {
+      "time": 1765249200064,
+      "coin": "xyz:MSFT",
+      "usdc": -0.250247,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765252800033,
+      "coin": "xyz:TSLA",
+      "usdc": 0.140815,
+      "fundingRate": 0.0000272683
+    },
+    {
+      "time": 1765256400043,
+      "coin": "xyz:TSLA",
+      "usdc": 0.166631,
+      "fundingRate": 0.0000323166
+    },
+    {
+      "time": 1765260000001,
+      "coin": "xyz:TSLA",
+      "usdc": 0.279775,
+      "fundingRate": 0.0000544764
+    },
+    {
+      "time": 1765260000001,
+      "coin": "xyz:NVDA",
+      "usdc": 0.294357,
+      "fundingRate": -0.0000559588
+    },
+    {
+      "time": 1765263600090,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301458,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765263600090,
+      "coin": "xyz:TSLA",
+      "usdc": 0.107247,
+      "fundingRate": 0.0000208082
+    },
+    {
+      "time": 1765263600090,
+      "coin": "xyz:NVDA",
+      "usdc": 0.012686,
+      "fundingRate": -0.0001744513
+    },
+    {
+      "time": 1765267200041,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.30154,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765267200041,
+      "coin": "xyz:TSLA",
+      "usdc": 0.064456,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765270800045,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301599,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765270800045,
+      "coin": "xyz:TSLA",
+      "usdc": 0.218278,
+      "fundingRate": 0.0000420553
+    },
+    {
+      "time": 1765270800045,
+      "coin": "xyz:NVDA",
+      "usdc": 0.038218,
+      "fundingRate": -0.0000125521
+    },
+    {
+      "time": 1765274400025,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.30114,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765274400025,
+      "coin": "xyz:TSLA",
+      "usdc": 0.131922,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765274400025,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112066,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765278000029,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301305,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765278000029,
+      "coin": "xyz:TSLA",
+      "usdc": 0.132106,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765278000029,
+      "coin": "xyz:NVDA",
+      "usdc": -0.118734,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765278000029,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112511,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765281600077,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301328,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765281600077,
+      "coin": "xyz:TSLA",
+      "usdc": 0.132203,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765281600077,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112163,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765285200052,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301234,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765285200052,
+      "coin": "xyz:TSLA",
+      "usdc": 0.132022,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765285200052,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112008,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765288800043,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.300694,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765288800043,
+      "coin": "xyz:TSLA",
+      "usdc": 0.132064,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765288800043,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001553,
+      "fundingRate": 0.0000099028
+    },
+    {
+      "time": 1765288800043,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.111962,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765292400058,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.300847,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765292400058,
+      "coin": "xyz:TSLA",
+      "usdc": 0.134544,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765292400058,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001964,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765292400058,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112098,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765296000007,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301446,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765296000007,
+      "coin": "xyz:TSLA",
+      "usdc": 0.135625,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765296000007,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001963,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765296000007,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112733,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765299600005,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301787,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765299600005,
+      "coin": "xyz:TSLA",
+      "usdc": 0.13594,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765299600005,
+      "coin": "xyz:NVDA",
+      "usdc": -0.149875,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765299600005,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001967,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765299600005,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.112945,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765303200021,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301869,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765303200021,
+      "coin": "xyz:TSLA",
+      "usdc": 0.136797,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765303200021,
+      "coin": "xyz:PLTR",
+      "usdc": -0.125035,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765303200021,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001959,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765303200021,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113906,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765306800066,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301928,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765306800066,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001964,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765306800066,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113917,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765310400008,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.301693,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765310400008,
+      "coin": "xyz:TSLA",
+      "usdc": -0.074885,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765310400008,
+      "coin": "xyz:MSFT",
+      "usdc": -0.001963,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765310400008,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113863,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765314000033,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113756,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765317600103,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113777,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765321200008,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113759,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765324800013,
+      "coin": "xyz:NVDA",
+      "usdc": -0.032423,
+      "fundingRate": 0.0000430595
+    },
+    {
+      "time": 1765324800013,
+      "coin": "xyz:GOOGL",
+      "usdc": 0.113666,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765328400046,
+      "coin": "xyz:NVDA",
+      "usdc": -0.045783,
+      "fundingRate": 0.0000711973
+    },
+    {
+      "time": 1765332000101,
+      "coin": "xyz:NVDA",
+      "usdc": -0.039902,
+      "fundingRate": 0.0000621325
+    },
+    {
+      "time": 1765335600000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.059649,
+      "fundingRate": 0.0000570375
+    },
+    {
+      "time": 1765335600000,
+      "coin": "xyz:MSFT",
+      "usdc": -0.005884,
+      "fundingRate": 0.0000163301
+    },
+    {
+      "time": 1765339200090,
+      "coin": "xyz:NVDA",
+      "usdc": -0.064815,
+      "fundingRate": 0.0000472532
+    },
+    {
+      "time": 1765339200090,
+      "coin": "xyz:MSFT",
+      "usdc": -0.004503,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765342800079,
+      "coin": "xyz:NVDA",
+      "usdc": -0.040282,
+      "fundingRate": 0.0000293532
+    },
+    {
+      "time": 1765342800079,
+      "coin": "xyz:MSFT",
+      "usdc": -0.004507,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765346400065,
+      "coin": "xyz:NVDA",
+      "usdc": -0.093639,
+      "fundingRate": 0.0000682193
+    },
+    {
+      "time": 1765346400065,
+      "coin": "xyz:MSFT",
+      "usdc": -0.012578,
+      "fundingRate": 0.0000348934
+    },
+    {
+      "time": 1765350000025,
+      "coin": "xyz:TSLA",
+      "usdc": 0.001756,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765350000025,
+      "coin": "xyz:NVDA",
+      "usdc": -0.074817,
+      "fundingRate": 0.0000543948
+    },
+    {
+      "time": 1765350000025,
+      "coin": "xyz:MSFT",
+      "usdc": -0.012355,
+      "fundingRate": 0.0000342475
+    },
+    {
+      "time": 1765353600023,
+      "coin": "xyz:TSLA",
+      "usdc": 0.00176,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765353600023,
+      "coin": "xyz:NVDA",
+      "usdc": -0.143496,
+      "fundingRate": 0.0001042132
+    },
+    {
+      "time": 1765353600023,
+      "coin": "xyz:MSFT",
+      "usdc": -0.0098,
+      "fundingRate": 0.0000271528
+    },
+    {
+      "time": 1765353600023,
+      "coin": "xyz:AMZN",
+      "usdc": -0.011673,
+      "fundingRate": 0.000016356
+    },
+    {
+      "time": 1765357200031,
+      "coin": "xyz:TSLA",
+      "usdc": 0.00176,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765357200031,
+      "coin": "xyz:NVDA",
+      "usdc": -0.110147,
+      "fundingRate": 0.0000800414
+    },
+    {
+      "time": 1765357200031,
+      "coin": "xyz:MSFT",
+      "usdc": -0.175105,
+      "fundingRate": 0.0000249779
+    },
+    {
+      "time": 1765357200031,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008921,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765360800108,
+      "coin": "xyz:TSLA",
+      "usdc": 0.001758,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765360800108,
+      "coin": "xyz:NVDA",
+      "usdc": -0.056252,
+      "fundingRate": 0.0000408596
+    },
+    {
+      "time": 1765360800108,
+      "coin": "xyz:PLTR",
+      "usdc": 0.002309,
+      "fundingRate": 0.000012539
+    },
+    {
+      "time": 1765360800108,
+      "coin": "xyz:MSFT",
+      "usdc": -0.087695,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765364400050,
+      "coin": "xyz:TSLA",
+      "usdc": 0.001756,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765364400050,
+      "coin": "xyz:NVDA",
+      "usdc": -0.097227,
+      "fundingRate": 0.0000706947
+    },
+    {
+      "time": 1765364400050,
+      "coin": "xyz:PLTR",
+      "usdc": 0.002305,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765364400050,
+      "coin": "xyz:MSFT",
+      "usdc": -0.087384,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765364400050,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009146,
+      "fundingRate": 0.0000128361
+    },
+    {
+      "time": 1765368000051,
+      "coin": "xyz:TSLA",
+      "usdc": 0.001757,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765368000051,
+      "coin": "xyz:NVDA",
+      "usdc": -0.11013,
+      "fundingRate": 0.0000797269
+    },
+    {
+      "time": 1765368000051,
+      "coin": "xyz:PLTR",
+      "usdc": 0.002303,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765368000051,
+      "coin": "xyz:MSFT",
+      "usdc": -0.086644,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765368000051,
+      "coin": "xyz:AMZN",
+      "usdc": -0.010988,
+      "fundingRate": 0.000015386
+    },
+    {
+      "time": 1765371600033,
+      "coin": "xyz:NVDA",
+      "usdc": -0.151044,
+      "fundingRate": 0.0001093347
+    },
+    {
+      "time": 1765371600033,
+      "coin": "xyz:PLTR",
+      "usdc": -0.087447,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765371600033,
+      "coin": "xyz:MSFT",
+      "usdc": -0.086112,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765371600033,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008924,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765375200003,
+      "coin": "xyz:NVDA",
+      "usdc": -0.067485,
+      "fundingRate": 0.0000488891
+    },
+    {
+      "time": 1765375200003,
+      "coin": "xyz:PLTR",
+      "usdc": -0.087898,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765375200003,
+      "coin": "xyz:MSFT",
+      "usdc": -0.086178,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765375200003,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008956,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765378800139,
+      "coin": "xyz:NVDA",
+      "usdc": -0.044296,
+      "fundingRate": 0.0000322467
+    },
+    {
+      "time": 1765378800139,
+      "coin": "xyz:MSFT",
+      "usdc": -0.085532,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765378800139,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009034,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765382400003,
+      "coin": "xyz:NVDA",
+      "usdc": -0.031536,
+      "fundingRate": 0.0000231628
+    },
+    {
+      "time": 1765382400003,
+      "coin": "xyz:PLTR",
+      "usdc": -0.074542,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765382400003,
+      "coin": "xyz:MSFT",
+      "usdc": -0.085148,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765382400003,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008997,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765386000019,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.124936,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765386000019,
+      "coin": "xyz:NVDA",
+      "usdc": -0.017002,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765386000019,
+      "coin": "xyz:PLTR",
+      "usdc": -0.075631,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765386000019,
+      "coin": "xyz:MSFT",
+      "usdc": -0.085571,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765386000019,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009048,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765389600058,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.125009,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765389600058,
+      "coin": "xyz:NVDA",
+      "usdc": -0.01706,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765389600058,
+      "coin": "xyz:MSFT",
+      "usdc": -0.08553,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765389600058,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009033,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765393200036,
+      "coin": "xyz:NVDA",
+      "usdc": -0.027962,
+      "fundingRate": 0.0000205351
+    },
+    {
+      "time": 1765393200036,
+      "coin": "xyz:PLTR",
+      "usdc": -0.062521,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765393200036,
+      "coin": "xyz:MSFT",
+      "usdc": -0.084973,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765393200036,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008973,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765396800105,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.15158,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765396800105,
+      "coin": "xyz:NVDA",
+      "usdc": -0.017182,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765396800105,
+      "coin": "xyz:PLTR",
+      "usdc": -0.069172,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765396800105,
+      "coin": "xyz:MSFT",
+      "usdc": -0.085082,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765396800105,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009039,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765400400013,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.65263,
+      "fundingRate": -0.0000163376
+    },
+    {
+      "time": 1765400400013,
+      "coin": "xyz:NVDA",
+      "usdc": -0.14153,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765400400013,
+      "coin": "xyz:PLTR",
+      "usdc": -0.113368,
+      "fundingRate": 0.0000124318
+    },
+    {
+      "time": 1765400400013,
+      "coin": "xyz:MSFT",
+      "usdc": -0.085091,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765400400013,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009043,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765404000057,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.219991,
+      "fundingRate": 0.0000091764
+    },
+    {
+      "time": 1765404000057,
+      "coin": "xyz:NVDA",
+      "usdc": -0.140359,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765404000057,
+      "coin": "xyz:PLTR",
+      "usdc": -0.113929,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765404000057,
+      "coin": "xyz:MSFT",
+      "usdc": -0.21313,
+      "fundingRate": 0.0000313144
+    },
+    {
+      "time": 1765404000057,
+      "coin": "xyz:AMZN",
+      "usdc": -0.009038,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765407600000,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.204336,
+      "fundingRate": -0.0000203346
+    },
+    {
+      "time": 1765407600000,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139827,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765407600000,
+      "coin": "xyz:MSFT",
+      "usdc": -0.168415,
+      "fundingRate": 0.0000247679
+    },
+    {
+      "time": 1765407600000,
+      "coin": "xyz:AMZN",
+      "usdc": -0.00902,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765411200043,
+      "coin": "xyz:NVDA",
+      "usdc": -0.223402,
+      "fundingRate": 0.0000199691
+    },
+    {
+      "time": 1765411200043,
+      "coin": "xyz:PLTR",
+      "usdc": -0.011193,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765411200043,
+      "coin": "xyz:MSFT",
+      "usdc": -0.184664,
+      "fundingRate": 0.0000271626
+    },
+    {
+      "time": 1765411200043,
+      "coin": "xyz:AMZN",
+      "usdc": -0.00901,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765414800002,
+      "coin": "xyz:NVDA",
+      "usdc": -0.18053,
+      "fundingRate": 0.0000161511
+    },
+    {
+      "time": 1765414800002,
+      "coin": "xyz:PLTR",
+      "usdc": -0.011171,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765414800002,
+      "coin": "xyz:MSFT",
+      "usdc": -0.123383,
+      "fundingRate": 0.0000181726
+    },
+    {
+      "time": 1765414800002,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008999,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765418400017,
+      "coin": "xyz:NVDA",
+      "usdc": -0.713099,
+      "fundingRate": 0.0000638854
+    },
+    {
+      "time": 1765418400017,
+      "coin": "xyz:PLTR",
+      "usdc": -0.083424,
+      "fundingRate": 0.0000166589
+    },
+    {
+      "time": 1765418400017,
+      "coin": "xyz:MSFT",
+      "usdc": -0.35173,
+      "fundingRate": 0.0000519105
+    },
+    {
+      "time": 1765418400017,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008981,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765422000029,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.197818,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765422000029,
+      "coin": "xyz:NVDA",
+      "usdc": -0.659748,
+      "fundingRate": 0.0000594142
+    },
+    {
+      "time": 1765422000029,
+      "coin": "xyz:PLTR",
+      "usdc": -0.106226,
+      "fundingRate": 0.0000214354
+    },
+    {
+      "time": 1765422000029,
+      "coin": "xyz:MSFT",
+      "usdc": -0.778651,
+      "fundingRate": 0.0000522041
+    },
+    {
+      "time": 1765422000029,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008926,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765425600035,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.197346,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765425600035,
+      "coin": "xyz:TSLA",
+      "usdc": -0.022917,
+      "fundingRate": 0.0000019063
+    },
+    {
+      "time": 1765425600035,
+      "coin": "xyz:NVDA",
+      "usdc": -0.46623,
+      "fundingRate": 0.0000420615
+    },
+    {
+      "time": 1765425600035,
+      "coin": "xyz:MSFT",
+      "usdc": -0.318336,
+      "fundingRate": 0.0000213697
+    },
+    {
+      "time": 1765425600035,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008904,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765429200039,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.197516,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765429200039,
+      "coin": "xyz:TSLA",
+      "usdc": 0.102452,
+      "fundingRate": -0.0000085117
+    },
+    {
+      "time": 1765429200039,
+      "coin": "xyz:NVDA",
+      "usdc": -0.138856,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765429200039,
+      "coin": "xyz:MSFT",
+      "usdc": -0.186164,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765429200039,
+      "coin": "xyz:AMZN",
+      "usdc": -0.00892,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.145544,
+      "fundingRate": 0.0000092087
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:TSLA",
+      "usdc": 0.224142,
+      "fundingRate": -0.0000186178
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:NVDA",
+      "usdc": -0.138918,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:PLTR",
+      "usdc": -0.187528,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:MSFT",
+      "usdc": -0.211689,
+      "fundingRate": 0.0000141958
+    },
+    {
+      "time": 1765432800044,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008917,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.197532,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:TSLA",
+      "usdc": 0.215012,
+      "fundingRate": -0.0000178054
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:NVDA",
+      "usdc": -0.138602,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:PLTR",
+      "usdc": 0.55083,
+      "fundingRate": -0.0000367503
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:MSFT",
+      "usdc": -1.024217,
+      "fundingRate": 0.0000688364
+    },
+    {
+      "time": 1765436400030,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008925,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.197772,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:TSLA",
+      "usdc": -0.150955,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:NVDA",
+      "usdc": -0.138771,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:PLTR",
+      "usdc": 0.411088,
+      "fundingRate": -0.0000273735
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:MSFT",
+      "usdc": -1.23279,
+      "fundingRate": 0.0000827948
+    },
+    {
+      "time": 1765440000002,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008937,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.07,
+      "fundingRate": -0.0000044247
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:TSLA",
+      "usdc": -0.150607,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:NVDA",
+      "usdc": -0.172753,
+      "fundingRate": 0.0000155411
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:PLTR",
+      "usdc": 0.226142,
+      "fundingRate": -0.0000150624
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:MSFT",
+      "usdc": -1.044026,
+      "fundingRate": 0.0000702003
+    },
+    {
+      "time": 1765443600086,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008933,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765447200017,
+      "coin": "xyz:TSLA",
+      "usdc": -0.151104,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765447200017,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139003,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765447200017,
+      "coin": "xyz:PLTR",
+      "usdc": 0.095141,
+      "fundingRate": -0.0000333049
+    },
+    {
+      "time": 1765447200017,
+      "coin": "xyz:MSFT",
+      "usdc": -0.186825,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765447200017,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008967,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765450800074,
+      "coin": "xyz:TSLA",
+      "usdc": -0.151151,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765450800074,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139319,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765450800074,
+      "coin": "xyz:PLTR",
+      "usdc": 0.049604,
+      "fundingRate": -0.0000055166
+    },
+    {
+      "time": 1765450800074,
+      "coin": "xyz:MSFT",
+      "usdc": -0.186723,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765450800074,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008963,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765454400085,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139288,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765454400085,
+      "coin": "xyz:MSFT",
+      "usdc": -0.333552,
+      "fundingRate": 0.0000223195
+    },
+    {
+      "time": 1765454400085,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008984,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765458000016,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139758,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765458000016,
+      "coin": "xyz:MSFT",
+      "usdc": -0.187592,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765458000016,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008997,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765461600053,
+      "coin": "xyz:NVDA",
+      "usdc": -0.139411,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765461600053,
+      "coin": "xyz:MSFT",
+      "usdc": -0.187171,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765461600053,
+      "coin": "xyz:AMZN",
+      "usdc": -0.00899,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765465200033,
+      "coin": "xyz:NVDA",
+      "usdc": -0.016487,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765465200033,
+      "coin": "xyz:PLTR",
+      "usdc": -0.055128,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765465200033,
+      "coin": "xyz:MSFT",
+      "usdc": -0.188214,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765465200033,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008462,
+      "fundingRate": 0.0000117838
+    },
+    {
+      "time": 1765468800037,
+      "coin": "xyz:PLTR",
+      "usdc": -0.055985,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765468800037,
+      "coin": "xyz:MSFT",
+      "usdc": -0.189111,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765468800037,
+      "coin": "xyz:AMZN",
+      "usdc": -0.006925,
+      "fundingRate": 0.0000096482
+    },
+    {
+      "time": 1765472400009,
+      "coin": "xyz:XYZ100",
+      "usdc": -0.29939,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765472400009,
+      "coin": "xyz:PLTR",
+      "usdc": -0.013261,
+      "fundingRate": 0.0000029421
+    },
+    {
+      "time": 1765472400009,
+      "coin": "xyz:MSFT",
+      "usdc": -0.18858,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765472400009,
+      "coin": "xyz:AMZN",
+      "usdc": -0.008941,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765476000065,
+      "coin": "xyz:TSLA",
+      "usdc": 0.099966,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765476000065,
+      "coin": "xyz:NVDA",
+      "usdc": -0.187419,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765476000065,
+      "coin": "xyz:PLTR",
+      "usdc": -0.311335,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765476000065,
+      "coin": "xyz:MSFT",
+      "usdc": -0.188934,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765479600050,
+      "coin": "xyz:TSLA",
+      "usdc": 0.100016,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765479600050,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188614,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765479600050,
+      "coin": "xyz:MSFT",
+      "usdc": -0.190747,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765483200102,
+      "coin": "xyz:TSLA",
+      "usdc": 0.100036,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765483200102,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189254,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765483200102,
+      "coin": "xyz:PLTR",
+      "usdc": -0.012457,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765483200102,
+      "coin": "xyz:MSFT",
+      "usdc": -0.19059,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765486800008,
+      "coin": "xyz:XYZ100",
+      "usdc": 0.502158,
+      "fundingRate": -0.0000125261
+    },
+    {
+      "time": 1765486800008,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189673,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765486800008,
+      "coin": "xyz:MSFT",
+      "usdc": -0.240092,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765490400002,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189747,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765490400002,
+      "coin": "xyz:MSFT",
+      "usdc": -0.240459,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765494000050,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189306,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765494000050,
+      "coin": "xyz:MSFT",
+      "usdc": -0.428015,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765497600018,
+      "coin": "xyz:NVDA",
+      "usdc": -0.149072,
+      "fundingRate": 0.0000098597
+    },
+    {
+      "time": 1765497600018,
+      "coin": "xyz:MSFT",
+      "usdc": -0.428589,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765501200171,
+      "coin": "xyz:NVDA",
+      "usdc": 0.111408,
+      "fundingRate": -0.0000073862
+    },
+    {
+      "time": 1765501200171,
+      "coin": "xyz:PLTR",
+      "usdc": -0.112038,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765501200171,
+      "coin": "xyz:MSFT",
+      "usdc": -0.427767,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765504800053,
+      "coin": "xyz:NVDA",
+      "usdc": -0.016325,
+      "fundingRate": 0.0000010804
+    },
+    {
+      "time": 1765504800053,
+      "coin": "xyz:MSFT",
+      "usdc": -0.428338,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765508400087,
+      "coin": "xyz:NVDA",
+      "usdc": 0.073451,
+      "fundingRate": -0.0000048479
+    },
+    {
+      "time": 1765508400087,
+      "coin": "xyz:MSFT",
+      "usdc": -0.42879,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765512000006,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189065,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765512000006,
+      "coin": "xyz:MSFT",
+      "usdc": -0.196469,
+      "fundingRate": 0.0000057322
+    },
+    {
+      "time": 1765515600009,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188992,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765515600009,
+      "coin": "xyz:MSFT",
+      "usdc": 0.360703,
+      "fundingRate": -0.0000105299
+    },
+    {
+      "time": 1765519200066,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189264,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765519200066,
+      "coin": "xyz:MSFT",
+      "usdc": -0.102487,
+      "fundingRate": 0.0000029915
+    },
+    {
+      "time": 1765522800063,
+      "coin": "xyz:NVDA",
+      "usdc": -0.157361,
+      "fundingRate": 0.0000104051
+    },
+    {
+      "time": 1765522800063,
+      "coin": "xyz:MSFT",
+      "usdc": -0.428365,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765526400062,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188992,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765526400062,
+      "coin": "xyz:MSFT",
+      "usdc": -0.427976,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765530000026,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188929,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765530000026,
+      "coin": "xyz:MSFT",
+      "usdc": -0.428135,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765533600066,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188153,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765533600066,
+      "coin": "xyz:MSFT",
+      "usdc": -0.427073,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765537200038,
+      "coin": "xyz:NVDA",
+      "usdc": -0.188562,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765537200038,
+      "coin": "xyz:MSFT",
+      "usdc": -0.426639,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765540800034,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189296,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765540800034,
+      "coin": "xyz:MSFT",
+      "usdc": -0.426391,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765544400065,
+      "coin": "xyz:NVDA",
+      "usdc": -0.191173,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765544400065,
+      "coin": "xyz:MSFT",
+      "usdc": -0.425984,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765548000016,
+      "coin": "xyz:NVDA",
+      "usdc": -0.190774,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765548000016,
+      "coin": "xyz:MSFT",
+      "usdc": -0.427772,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765551600036,
+      "coin": "xyz:NVDA",
+      "usdc": -0.189872,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765551600036,
+      "coin": "xyz:MSFT",
+      "usdc": -0.425648,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765555200063,
+      "coin": "xyz:NVDA",
+      "usdc": -0.18615,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765555200063,
+      "coin": "xyz:MSFT",
+      "usdc": -0.188565,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765558800048,
+      "coin": "xyz:NVDA",
+      "usdc": -0.184357,
+      "fundingRate": 0.0000125
+    },
+    {
+      "time": 1765558800048,
+      "coin": "xyz:MSFT",
+      "usdc": -0.188218,
+      "fundingRate": 0.0000125
+    }
+  ]
+}

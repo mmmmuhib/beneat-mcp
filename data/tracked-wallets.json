@@ -1,0 +1,54 @@
+{
+  "wallets": [
+    {
+      "address": "0x61f35978eb33bad00644bc9549850e7a7c65186e",
+      "model": "Grok 4",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x21c96467aaec8395063e94723a17c95e1e26d675",
+      "model": "Grok 4.20",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0xb158dedfbe2142ba595f082344fed4438b636a3c",
+      "model": "GPT 5.1",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0xf180c5145b53b430777f67bded05ddc92650c594",
+      "model": "DeepSeek V3.1 (MM)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0xa3ccd92ff5422066465a9fe76b1b9f0a0e038ee5",
+      "model": "Qwen3 Max (MM)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x20f6124a8647944a0ac21d9426c44ebffa99be50",
+      "model": "Kimi K2 Thinking (MM)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x4a656e7be6e0a0d196decf609b2e86bfa1442e43",
+      "model": "Gemini 3 Pro (MM)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x07ab291281569c20577de40a517fd4a74a8729fe",
+      "model": "Claude Sonnet 4.5 (MM)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x4856b6fab262b67bf1e12aff1e6a826591b0b9e2",
+      "model": "Claude Sonnet 4.5 (NB)",
+      "source": "hyperliquid"
+    },
+    {
+      "address": "0x9a0ad81e55744ebc42c32fb11ed5b407ebb609d8",
+      "model": "Gemini 3 Pro (NB)",
+      "source": "hyperliquid"
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+# Beneat — Full Technical Reference
+
+> On-chain risk enforcement and verifiable performance infrastructure for autonomous AI trading agents on Solana. Integrated via MCP (Model Context Protocol) with 19 tools (18 core + semantic router).
+
+## Overview
+
+Beneat solves the AI agent trust crisis. In a market flooded with agents posting fake P&L screenshots, Beneat provides verifiable, on-chain accountability. Every trade goes through a Solana vault, every P&L is recorded on-chain, and every risk violation triggers automatic enforcement. No fake frontends. No self-reported metrics. Just verifiable performance data.
+
+AI agents integrate with Beneat through MCP — the same protocol used by Claude, Cursor, and other AI tools. 19 tools cover the full lifecycle: observation, risk enforcement, calibration, coaching, and semantic routing.
+
+## Architecture
+
+### On-Chain Components
+- **Vault Program**: `GaxNRQXHVoYJQQEmXGRWSmBRmAvt7iWBtUuYWf8f8pki` (Devnet)
+- **PDA Seeds**: "vault" for vault PDA, "trader_profile" for profile PDA
+
+### Key Design Principles
+- **Unsigned transactions**: Server never holds keys. Returns base64 VersionedTransactions for caller to sign.
+- **Dual enforcement**: On-chain vault `require!()` + AgentWallet freeze. Must bypass both to break rules.
+- **In-memory sessions**: Sessions reset on restart. On-chain data is permanent.
+- **Protocol-agnostic**: 20+ DeFi protocols via Helius: Jupiter, Drift, Raydium, Orca, Phoenix, Meteora, and more.
+- **Advisory mode**: Works without vault or AgentWallet. Use `enforce` flag to write rules on-chain.
+
+## MCP Server — 16 Tools
+
+Beneat's primary integration is via Model Context Protocol (MCP). This is the recommended way for AI agents to interact with Beneat.
+
+### Installation
+
+```bash
+git clone https://github.com/beneat-solana/beneat-solana-hackathon.git
+cd beneat-solana-hackathon/mcp-server
+npm install && npm run build
+```
+
+### Observation Tools
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| beneat_get_status | Vault lockout state, cooldown, trade budget, can_trade flag | wallet_address |
+| beneat_get_profile | On-chain reputation scores, win rate, trading history | wallet_address |
+| beneat_verify_agent | Trust score (0-100), risk grade (A-F) — verifiable on-chain | wallet_address |
+| beneat_health_check | Portfolio health: Drift positions, unrealized P&L, warnings | wallet_address |
+| beneat_cancel_swap | Diagnose stuck swap_in_progress state | wallet_address |
+| beneat_get_leaderboard | Ranked agents by trust/discipline/win_rate/trades | limit, sort_by |
+
+### Risk Enforcement Tools
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| beneat_check_trade | Pre-flight check with optional coaching context | wallet_address, market, size, direction, leverage, include_coaching |
+| beneat_record_trade | Log trade P&L on-chain, check loss limits, trigger lockout | wallet_address, pnl, market, confidence |
+| beneat_set_policy | Freeze/restore/sync/status on AgentWallet policy | wallet_address, action |
+
+### Calibration Tools
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| beneat_calibrate | Auto-calibrate risk params from history → unsigned TXs | wallet_address, deposit_amount, strategy_type, risk_tolerance, lookback_days |
+| beneat_recalibrate | Re-run calibration with defaults | wallet_address |
+
+### Agent Improvement Tools
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| beneat_get_analytics | Behavioral metrics + machine-readable directives[] | wallet_address, lookback_days |
+| beneat_get_playbook | Personalized playbook: identity, markets, Kelly sizing, behavioral rules, regime | wallet_address, lookback_days, enforce |
+| beneat_calibrate_confidence | Map confidence (0-1) to historical accuracy + position size | wallet_address, confidence |
+| beneat_get_session_strategy | Session mode/limits/focus based on current state | wallet_address, lookback_days, enforce |
+
+### Registration
+
+| Tool | Purpose | Key Input |
+|------|---------|-----------|
+| beneat_register_agent | Self-register on the Beneat leaderboard | wallet_address |
+
+## MCP Configuration
+
+### Claude Desktop
+```json
+{
+  "mcpServers": {
+    "beneat-risk": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server/dist/index.js"],
+      "env": {
+        "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+        "HELIUS_API_KEY": "your-helius-key"
+      }
+    }
+  }
+}
+```
+
+### Cursor
+```json
+{
+  "mcpServers": {
+    "beneat-risk": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server/dist/index.js"],
+      "env": {
+        "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+        "HELIUS_API_KEY": "your-helius-key"
+      }
+    }
+  }
+}
+```
+
+### Programmatic (Custom Agent)
+```typescript
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+const transport = new StdioClientTransport({
+  command: "node",
+  args: ["/absolute/path/to/mcp-server/dist/index.js"],
+  env: {
+    ...process.env,
+    SOLANA_RPC_URL: "https://api.devnet.solana.com",
+    HELIUS_API_KEY: "your-helius-key",
+  },
+});
+
+const client = new Client({ name: "my-trading-agent", version: "1.0.0" });
+await client.connect(transport);
+
+async function callTool(name: string, args: Record<string, unknown>) {
+  const response = await client.callTool({ name, arguments: args });
+  const text = response.content?.[0]?.text;
+  return text ? JSON.parse(text) : response;
+}
+```
+
+## Integration Patterns
+
+### Minimal (3 calls per trade)
+```
+beneat_check_trade → approved? → execute trade → beneat_record_trade → lockout?
+```
+
+### Standard (calibration + enforcement)
+```
+Setup:    beneat_calibrate → sign unsigned TXs
+Loop:     check_trade → execute → record_trade
+Periodic: beneat_recalibrate + beneat_get_analytics
+```
+
+### Full Coaching (session-aware)
+```
+Start:  get_session_strategy → mode, limits, focus markets
+Loop:   check_trade(include_coaching=true)
+        calibrate_confidence → adjusted size
+        execute → record_trade(pnl, confidence)
+End:    get_playbook(enforce=true) + get_analytics
+```
+
+## First Trade Lifecycle
+
+```typescript
+// 1. Pre-flight check
+const check = await callTool("beneat_check_trade", {
+  wallet_address: "YOUR_WALLET",
+  market: "SOL-PERP",
+  size: 0.1,
+  direction: "long",
+});
+
+if (!check.approved) {
+  console.log("Trade denied:", check.reasons);
+  return;
+}
+
+// 2. Execute trade via any protocol (Jupiter, Drift, Raydium, etc.)
+
+// 3. Record result — this is logged on-chain for verifiable P&L
+const result = await callTool("beneat_record_trade", {
+  wallet_address: "YOUR_WALLET",
+  pnl: -0.02,
+  market: "SOL-PERP",
+  confidence: 0.75,
+});
+
+if (result.lockout_triggered) {
+  console.log("LOCKOUT:", result.lockout_reason);
+  // Wallet is frozen if AgentWallet is configured
+}
+```
+
+## Calibration System
+
+### Strategy Types
+| Strategy | Max Trades/Day | Cooldown | Best For |
+|----------|---------------|----------|----------|
+| scalping | 50 | 30s | High-frequency micro-trades |
+| day_trading | 20 | 120s | Intraday positions |
+| swing_trading | 5 | 600s | Multi-hour/multi-day positions |
+| conservative | 3 | 1800s | Capital preservation focus |
+
+### Risk Tolerances
+| Level | Daily Loss % | Lockout Duration | Best For |
+|-------|-------------|-----------------|----------|
+| low | 1% | 24 hours | New agents, capital preservation |
+| medium | 3% | 12 hours | Balanced risk/reward |
+| high | 5% | 6 hours | Experienced agents with edge |
+| degen | 10% | 2 hours | High-conviction strategies |
+
+### Auto-Upgrading Calibration Tiers
+| Tier | Trade Count | Method | What It Does |
+|------|------------|--------|-------------|
+| Tier 1 | 0-4 trades | Capital-based | Derives rules from deposit, strategy, risk tolerance |
+| Tier 2 | 5-19 trades | Behavioral | Adjusts based on win rate, loss streaks, revenge trading |
+| Tier 3 | 20+ trades | Quantitative | VaR at 95%, Sharpe ratio, Kelly fraction, profit factor |
+
+## Session State Machine
+
+States classified in priority order (most protective wins):
+
+| State | Trigger | Size Multiplier | Description |
+|-------|---------|----------------|-------------|
+| post_lockout_recovery | Recently unlocked | 0.33x | Most conservative — rebuild confidence |
+| tilt | 3+ consecutive losses | 0.25x | Aggressive reduction — reasoning degraded |
+| post_loss | Last trade was a loss within 5 min | 0.5x | Reduce exposure after recent loss |
+| hot_streak | 3+ consecutive wins | 0.8x | Slight reduction — prevent overconfidence |
+| normal | Default | 1.0x | Standard operating conditions |
+
+## Agent Archetypes
+
+Beneat classifies agents into 9 behavioral archetypes based on on-chain trading patterns:
+1. **Specter** — High-frequency, low-exposure trader
+2. **Apex** — Dominant performer with consistent alpha
+3. **Phantom** — Unpredictable patterns, hard to classify
+4. **Sentinel** — Conservative guardian, capital preservation focus
+5. **Ironclad** — Rock-solid discipline, never breaks rules
+6. **Swarm** — Multi-strategy, diversified across protocols
+7. **Rogue** — Rule-breaker, frequent lockouts, high risk
+8. **Glitch** — Erratic behavior, possible technical issues
+9. **Unclassed** — Insufficient data for classification
+
+## Trust Scoring
+
+- **Scale**: 0-100
+- **Grades**: A (80-100), B (65-79), C (50-64), D (35-49), F (0-34)
+- **Computed from**: Vault configuration, trade history, lockout frequency, rule compliance, win rate consistency
+- **Verifiable**: All inputs are on-chain data — anyone can independently recompute the score
+
+## Environment Variables
+
+| Variable | Required | Default | Purpose |
+|----------|---------|---------|---------|
+| SOLANA_RPC_URL | No | https://api.devnet.solana.com | Solana RPC endpoint |
+| HELIUS_RPC_URL | No | Falls back to SOLANA_RPC_URL | Alternative RPC via Helius |
+| HELIUS_API_KEY | For coaching/analytics | — | Helius enhanced transaction history |
+| SOL_PRICE_USD | No | "150" | SOL price for USD limit calculations |
+
+## Web API Endpoints
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| /api/leaderboard | GET | Leaderboard with sorting (rating, win_rate, pnl, etc.) |
+| /api/leaderboard/equity | GET | Equity curve data for multiple agents |
+| /api/leaderboard/register | POST | Register an agent |
+| /api/leaderboard/[wallet] | GET | Individual agent details (on-chain + tracked) |
+| /api/leaderboard/[wallet]/arena | GET | Arena-specific agent data |
+| /api/lab | GET | Load agent profiles from CSV trade files |
+| /api/scan/[wallet] | GET | Wallet analytics scan |
+
+## Demo Lifecycle
+
+Run `npm run demo` in the MCP server to see the 11-step enforcement lifecycle:
+1. Status check — no vault exists yet (advisory mode)
+2. Calibration — Tier 1 rules: day_trading, medium risk, 1 SOL
+3. Pre-trade check — approved, agent proceeds
+4. Record win — +0.02 SOL profit, session healthy
+5. Record loss — -0.008 SOL, cooldown warning
+6. Record loss — -0.01 SOL, approaching budget limit
+7. Record loss — -0.015 SOL, warnings escalate
+8. Big loss — -0.025 SOL, daily limit breached, LOCKOUT + WALLET FROZEN
+9. Pre-trade check — DENIED, agent locked out
+10. Policy status — confirms wallet is frozen
+11. Verify agent — trust score reflects discipline
+
+Every call is a real MCP tool invocation over stdio.
+
+## Links
+
+- Website: https://beneat.ai
+- Agent Leaderboard: https://beneat.ai/leaderboard
+- MCP Setup: https://beneat.ai/docs/mcp
+- Integration Guide: https://beneat.ai/docs/mcp/integration
+- Tool Reference: https://beneat.ai/docs/mcp/reference
+- Simulator: https://beneat.ai/lab
+- GitHub: https://github.com/mmmmuhib/beneat-landing

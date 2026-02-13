@@ -1,0 +1,73 @@
+name: Beneat Evaluation Suite
+
+on:
+  push:
+    paths:
+      - 'mcp-server/src/**'
+      - 'app/lib/dr-cam/**'
+      - 'data/agent-trades/**'
+      - 'eval/**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: mcp-server/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install MCP server dependencies
+        run: cd mcp-server && npm ci
+
+      - name: Build MCP server
+        run: cd mcp-server && npm run build
+
+      - name: Install eval dependencies
+        run: cd eval && pip install -e .
+
+      - name: Start MCP server
+        run: |
+          cd mcp-server && npm run start:http &
+          sleep 3
+          curl -sf http://localhost:3001/health || (echo "MCP server failed to start" && exit 1)
+
+      - name: Run security benchmarks (deterministic)
+        run: cd eval && python run_ci.py
+
+      - name: Run full evaluation suite
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GLM5_API_KEY: ${{ secrets.GLM5_API_KEY }}
+          GLM5_BASE_URL: https://api.z.ai/api/coding/paas/v4
+          DRCAM_API_URL: http://localhost:3000/api/lab/dr-cam
+        run: cd eval && python run_all.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            eval/results/
+          retention-days: 30
+
+      - name: Upload scatter plot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logic-pnl-scatter
+          path: eval/results/logic_pnl_scatter.png
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,58 @@
+# Beneat
+
+> On-chain risk enforcement and verifiable performance infrastructure for autonomous AI trading agents on Solana. Beneat solves the fake AI agent problem — every P&L is on-chain, every trade is verifiable, every agent is accountable.
+
+## The Problem
+
+AI trading agents are everywhere, but trust is nowhere. Agents on X post screenshots of 500% returns with fabricated frontends. There is no way to verify if an AI agent actually makes money. Beneat fixes this by enforcing all trading through on-chain vaults where every trade, every P&L, and every risk violation is permanently recorded on Solana.
+
+## Core Capabilities
+
+- **Verifiable On-Chain P&L**: Every trade is recorded on Solana. No fake screenshots — verify any agent's actual performance by checking the chain.
+- **On-Chain Risk Enforcement**: Smart contract vaults with automatic lockout on daily loss limit breach. PDA-based trader profiles store rules permanently on Solana.
+- **Behavioral Analysis**: Neural pattern recognition across on-chain trade history. Detects revenge trading, overconfidence, loss streaks, and discipline gaps.
+- **Agent Leaderboard**: Trust scoring (0-100, A-F grading) ranking autonomous agents by discipline, win rate, and verifiable risk management.
+- **MCP Integration**: 19 tools for AI agents — pre-trade checks, trade recording, calibration, coaching, playbooks, confidence calibration, and semantic tool routing.
+- **Session State Machine**: Automatic state transitions (normal, tilt, lockout, recovery) with position size multipliers that prevent emotional overtrading.
+- **Dual Enforcement**: On-chain vault `require!()` + AgentWallet freeze. Must bypass both to break rules — no agent can cheat.
+- **Monte Carlo Simulation**: Performance modeling and risk scenario analysis for agent strategies.
+
+## Why This Matters
+
+The AI agent trading space has a trust crisis. Anyone can spin up a frontend showing fake P&L. Beneat is infrastructure that makes AI agents accountable:
+1. Agents deposit into on-chain vaults with enforced risk rules
+2. Every trade is checked against rules before execution
+3. Losses are tracked on-chain — breach the limit and the vault locks automatically
+4. A public leaderboard ranks agents by verifiable, on-chain performance
+5. Trust scores are computed from real trading data, not self-reported metrics
+
+## Use Cases
+
+- AI trading agents needing verifiable, on-chain risk management on Solana
+- DeFi protocols wanting to verify agent discipline before granting access
+- Users evaluating which AI trading agents are legitimate vs. fake
+- Agent developers building self-improving trading systems with accountability
+- Portfolio managers monitoring multiple autonomous trading agents with real data
+
+## Technical Stack
+
+- Solana smart contracts (Anchor/Rust) for vault enforcement
+- Next.js 15 + React 19 frontend with real-time analytics
+- MCP server with 19 tools for agent integration
+- Helius API for on-chain transaction history
+- D3.js for data visualization and equity curves
+
+## Links
+
+- [Landing Page](https://beneat.ai)
+- [Agent Leaderboard](https://beneat.ai/leaderboard)
+- [MCP Setup Guide](https://beneat.ai/docs/mcp)
+- [MCP Integration Patterns](https://beneat.ai/docs/mcp/integration)
+- [MCP Tool Reference](https://beneat.ai/docs/mcp/reference)
+- [LLM Enforcement Simulator](https://beneat.ai/lab)
+- [GitHub Repository](https://github.com/mmmmuhib/beneat-landing)
+- [Full Technical Reference](https://beneat.ai/llms-full.txt)
+
+## Keywords
+
+AI trading agent, Solana DeFi, on-chain risk enforcement, verifiable P&L, autonomous agent infrastructure, behavioral analysis, vault-based risk management, MCP Model Context Protocol, agent leaderboard, trust scoring, neural trading analysis, AI agent analytics, fake agent detection, on-chain accountability, agent verification
