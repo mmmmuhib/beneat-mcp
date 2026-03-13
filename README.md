@@ -1,214 +1,277 @@
-<p align="center">
-  <img src="public/Beneat_Logo.png" alt="Beneat Logo" width="120" />
-</p>
+# @beneat/risk-mcp-server
 
-<h1 align="center">Beneat MCP</h1>
+Risk enforcement and behavioral coaching for AI trading agents. 19 tools (18 core + 1 semantic router) over MCP (stdio + HTTP) and a plain REST API — pre-trade validation, P&L tracking, session calibration, behavioral analytics, and natural-language intent routing via Cohere Rerank.
 
-<p align="center">
-  <strong>On-chain risk enforcement for autonomous AI trading agents on Solana</strong>
-</p>
+The reference implementation is wired to **Solana + Drift Protocol**. The chain adapters live in `src/lib/` — swap them out to use any exchange or chain. See [Adapting to Other Chains](#adapting-to-other-chains).
 
-<p align="center">
-  <a href="https://beneat.ai">Live App</a> &middot;
-  <a href="https://x.com/beneat_ai">Twitter</a>
-</p>
+**Your agent trades. Beneat makes sure it doesn't blow up.**
 
----
+## Hosted Instance
 
-## What is Beneat?
+Beneat MCP is live at `https://beneat-mcp.onrender.com`. No installation required.
 
-Beneat is **recursively agentic infrastructure** for Solana:
+Add to any MCP client config:
 
-- **Built BY an agent** — Claude Opus 4.6 co-authored 86K+ lines of code
-- **Built FOR agents** — 19-tool MCP server for any AI trading agent to integrate
-- **Evaluated BY agents** — DeepEval with GLM-5 as LLM judge validates tool correctness
+```json
+{
+  "mcpServers": {
+    "beneat": {
+      "type": "streamable-http",
+      "url": "https://beneat-mcp.onrender.com/mcp"
+    }
+  }
+}
+```
 
-It provides on-chain risk enforcement and behavioral analytics that bridge the gap between non-deterministic AI behavior and the disciplined requirements of financial markets — preventing hallucinated trades and emotional tilting before they destroy capital.
+### REST API
 
-**No fake screenshots. No self-reported metrics. Every trade on-chain, every P&L verifiable.**
+```bash
+curl https://beneat-mcp.onrender.com/health                                         # Health check
+curl https://beneat-mcp.onrender.com/api/tools                                      # Tool manifest
+curl -X POST https://beneat-mcp.onrender.com/api/tools/beneat_get_status \
+  -H "Content-Type: application/json" -d '{"wallet_address":"YOUR_WALLET"}'          # Call any tool
+curl -X POST https://beneat-mcp.onrender.com/api/route \
+  -H "Content-Type: application/json" -d '{"intent":"am I safe to trade?"}'          # Semantic routing
+```
 
-## Key Features
-
-| Feature | Description |
-|---------|-------------|
-| **MCP Server (19 tools)** | Observation, enforcement, calibration, coaching, admin, and semantic routing — agents integrate via the same protocol used by Claude, Cursor, and other AI tools |
-| **Semantic Tool Routing** | Cohere Rerank routes natural-language agent intent to the right tool with session-aware 70/30 semantic/state blending |
-| **Agent Arena Leaderboard** | Ranked agents with trust scores (0-100, A-F grades), win rates, P&L, and equity curves |
-| **LLM Enforcement Lab** | Monte Carlo simulator comparing baseline vs. enforced agent outcomes on real trade data |
-| **DR-CAM Causal Inference** | Doubly robust counterfactual estimation proving enforcement causally improves outcomes |
-| **9 Agent Archetypes** | Specter, Apex, Phantom, Sentinel, Ironclad, Swarm, Rogue, Glitch, Unclassed |
-| **3-Layer Evaluation Suite** | DeepEval integrity, DeepTeam safety (12 MSB attacks), DR-CAM impact correlation |
-| **D3 Visualizations** | Equity curves, Monte Carlo distributions, behavioral timelines, sparklines |
-
-## MCP Server
-
-The MCP server is the centerpiece — 19 tools across 6 categories that any AI trading agent can integrate via Model Context Protocol.
-
-### Tool Categories
-
-| Category | Tools | Purpose |
-|----------|-------|---------|
-| **Observation** (6) | `get_status`, `get_profile`, `verify_agent`, `health_check`, `cancel_swap`, `get_leaderboard` | Read on-chain state, trust scores, portfolio health |
-| **Enforcement** (3) | `check_trade`, `record_trade`, `set_policy` | Pre-trade checks, P&L recording, wallet freeze on lockout |
-| **Calibration** (3) | `calibrate`, `recalibrate`, `calibrate_confidence` | 3-tier auto-tuning: capital → behavioral → quantitative |
-| **Coaching** (3) | `get_analytics`, `get_playbook`, `get_session_strategy` | Behavioral analysis, personalized playbooks, session planning |
-| **Admin** (2) | `reset_session`, `set_advisory_limits` | Session management for benchmarks |
-| **Routing** (1) | `smart_route` | Cohere Rerank semantic routing with session-state weights |
-
-### Quick Start
+## Self-Host
 
 ```bash
 cd mcp-server
 npm install && npm run build
-npm run start          # stdio transport
-npm run start:http     # HTTP transport (port 3001)
+npm run start:http    # HTTP on localhost:3001
+npm run start         # stdio transport
 ```
 
-### Agent Coaching Loop
+Self-hosted REST API uses `http://localhost:3001` instead of the hosted URL.
+
+Then add one line to your agent's system prompt:
+
+> Before executing any trade, call `beneat_check_trade` with your wallet address. After every trade, call `beneat_record_trade` with the P&L.
+
+Zero code changes to your trading logic. The MCP server handles enforcement.
+
+## How It Works
 
 ```
-Agent → get_session_strategy → mode + limits
-  → check_trade(include_coaching=true) → approval + coaching context
-    → Agent adjusts size/market based on coaching
-      → record_trade(pnl, confidence) → P&L + confidence logged
-        → get_playbook → evolving behavioral rules
+Agent wants to trade
+  │
+  ├─ beneat_calibrate ──→ Sets risk rules (daily loss limit, max trades, cooldown)
+  │                        Returns unsigned TXs to deploy on-chain
+  │
+  ├─ beneat_check_trade ──→ Pre-flight: lockout? cooldown? budget left?
+  │                          Returns approved/denied + coaching context
+  │
+  ├─ [Agent executes trade]
+  │
+  ├─ beneat_record_trade ──→ Logs P&L in session tracker
+  │                           Daily loss limit breached?
+  │                             ├─ YES → Lockout triggered → AgentWallet FROZEN
+  │                             └─ NO  → Continue trading
+  │
+  └─ beneat_check_trade ──→ DENIED (vault locked, wallet frozen)
+                             Agent blocked until lockout expires
 ```
 
-### Enforcement Chain
+## Vault-Optional Mode
 
-```
-Agent → check_trade → Approved? → Execute trade
-  → record_trade → Daily loss limit breached?
-    → Lockout triggered → set_policy(freeze) → AgentWallet frozen
-```
+7 tools work without a Beneat vault account, falling back to Helius transaction history analysis:
 
-## DR-CAM Framework
+| Mode | Enforcement | Trust Score Cap | Requirements |
+|------|-------------|-----------------|--------------|
+| **Enforced** (with vault) | On-chain lockouts + AgentWallet freeze | 100 | Vault deployed |
+| **Advisory** (no vault) | Session tracking + recommendations | 40 | Just a wallet address |
 
-Doubly Robust Counterfactual Action Mapping — a causal inference layer that estimates enforcement impact. Only needs either the propensity model OR the outcome model to be correct for consistent results.
+Any Solana trading agent can start using Beneat immediately in advisory mode. Create a vault to unlock full enforcement.
 
-**Pipeline:** `TradeResult[] → feature extraction → stationary bootstrap → CAM intervention → propensity scoring → DR correction → aggregate CATE`
+## Tools (19)
 
-Key modules: Feature Engineer, Stationary Bootstrap (Politis-Romano), Propensity Model, Outcome Model, Intervention Operator, DR Estimator, Sensitivity Analysis (Rosenbaum bounds).
+### Core Enforcement
 
-## Evaluation Suite
+| Tool | Purpose |
+|------|---------|
+| `beneat_check_trade` | Pre-flight check: lockout, cooldown, trade count, daily loss budget. Returns approved/denied with reasons and optional coaching context |
+| `beneat_record_trade` | Log trade P&L. Checks daily loss limit, triggers lockout if breached, freezes AgentWallet |
+| `beneat_calibrate` | Auto-calibrate risk params from history. 3 tiers: capital-based → behavioral → quantitative (VaR, Sharpe, Kelly). Returns unsigned TXs |
+| `beneat_recalibrate` | Re-run calibration with latest history |
+| `beneat_set_policy` | AgentWallet policy control: freeze, restore, sync, status |
 
-Python sidecar validating MCP adapter logic and safety.
+### Agent Coaching
 
-| Layer | Framework | What It Tests |
-|-------|-----------|---------------|
-| **Integrity** | DeepEval + GLM-5 judge | ToolCorrectness (0-1), TaskCompletion (0-1) |
-| **Safety** | DeepTeam + 12 MSB attacks | Attack Success Rate, lockout bypass resistance |
-| **Impact** | DR-CAM + Spearman | Enforcement delta (%), reasoning-P&L correlation |
+| Tool | Purpose |
+|------|---------|
+| `beneat_get_session_strategy` | Session plan: mode (aggressive/normal/recovery), max trades, focus markets, stop conditions |
+| `beneat_get_playbook` | Personalized playbook: identity, primary/restricted markets, Kelly position sizing, behavioral rules, regime detection |
+| `beneat_get_analytics` | Behavioral analysis: hallucination rate, tilt, revenge trading, overconfidence. Returns machine-readable `directives[]` |
+| `beneat_calibrate_confidence` | Map reported confidence (0-1) to historical accuracy. Returns calibrated confidence + position size recommendation |
+
+### Discovery & Monitoring
+
+| Tool | Purpose |
+|------|---------|
+| `beneat_get_status` | Vault lockout state, cooldown, trades remaining, can_trade flag |
+| `beneat_get_profile` | On-chain reputation scores (8 ratings, 0-99 each), win rate, trading history |
+| `beneat_verify_agent` | Trust score (0-100), risk grade (A-F). Use before accepting counterparty risk |
+| `beneat_health_check` | Portfolio health: Drift perp positions (11 markets), unrealized P&L, warnings |
+| `beneat_get_leaderboard` | Ranked agents by trust grade, discipline, win rate, P&L |
+| `beneat_register_agent` | Self-signup for leaderboard tracking |
+| `beneat_cancel_swap` | Diagnose stuck swap_in_progress state |
+
+### Admin & Registration
+
+| Tool | Purpose |
+|------|---------|
+| `beneat_reset_session` | Reset in-memory trading session (used by benchmarks) |
+| `beneat_set_advisory_limits` | Configure advisory risk limits for a session (used by benchmarks) |
+| `beneat_register_agent` | Register an AI agent on the leaderboard for tracking |
+
+### Semantic Routing
+
+| Tool | Purpose |
+|------|---------|
+| `beneat_smart_route` | Route natural-language intent to most relevant tools via Cohere Rerank. Session-aware scoring blends semantic relevance (70%) with per-tool session-state weights (30%). Falls back gracefully without `COHERE_API_KEY`. |
+
+Also available as `POST /api/route` for REST clients outside MCP.
+
+## Calibration Tiers
+
+The calibration engine adapts to the agent's trade history:
+
+| Tier | Trades Required | Method | Metrics |
+|------|----------------|--------|---------|
+| **Tier 1** | 0-4 | Capital-based | Strategy type + risk tolerance → base rules |
+| **Tier 2** | 5-19 | Behavioral | Win rate, loss streaks, revenge trading ratio |
+| **Tier 3** | 20+ | Quantitative | VaR 95%, Sharpe ratio, Kelly fraction, max drawdown, profit factor |
+
+Strategy presets:
+
+| Strategy | Max Trades/Day | Cooldown |
+|----------|---------------|----------|
+| `scalping` | 50 | 30s |
+| `day_trading` | 20 | 120s |
+| `swing_trading` | 5 | 600s |
+| `conservative` | 3 | 1800s |
+
+Risk tolerance levels:
+
+| Level | Daily Loss Limit | Lockout Duration |
+|-------|-----------------|-----------------|
+| `low` | 1% of capital | 24 hours |
+| `medium` | 3% | 12 hours |
+| `high` | 5% | 6 hours |
+| `degen` | 10% | 2 hours |
+
+## Quick Start
 
 ```bash
-cd eval
-pip install -e .
-python run_all.py       # Full suite (requires MCP server + GLM5 API key)
-python run_ci.py        # CI subset (deterministic only)
-```
-
-## Solana Integration
-
-- **Vault Program:** `GaxNRQXHVoYJQQEmXGRWSmBRmAvt7iWBtUuYWf8f8pki`
-- **PDA Derivation:** Seeds `"vault"` and `"trader_profile"`
-- **Account Deserialization:** Codama-generated decoders for binary vault data
-- **Transaction History:** Helius Enhanced API with swap detection across Jupiter, Raydium, Orca, Drift, Meteora, and 15+ protocols
-- **Unsigned Transactions:** Server never holds keys — returns base64 `VersionedTransaction` for agents to sign
-- **Drift Positions:** 11 perp markets read from on-chain user accounts
-- **AgentWallet:** Policy sync freezes wallets on lockout triggers
-- **Circuit Breaker:** 3 failures → 60s cooldown for RPC reliability
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 15 (App Router) + React 19 |
-| Language | TypeScript 5 (strict) |
-| Styling | Tailwind CSS 4 |
-| Blockchain | @solana/web3.js, @solana/kit, @solana/wallet-adapter-react |
-| MCP | @modelcontextprotocol/sdk |
-| Semantic Routing | Cohere Rerank (rerank-v4.0-fast) |
-| State | Zustand 5 |
-| Animation | Framer Motion 12 |
-| Charts | D3 7.9 |
-| Evaluation | DeepEval, DeepTeam, GLM-5 |
-| RPC | Helius Enhanced API |
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm
-- A [Helius](https://helius.dev) API key (free tier works)
-
-### Setup
-
-```bash
-git clone https://github.com/mmmmuhib/beneat-mcp.git
-cd beneat-mcp
-
+# Build
+cd mcp-server
 npm install
+npm run build
 
-cp .env.local.example .env.local
-# Add your HELIUS_API_KEY
+# Run the demo (full enforcement lifecycle)
+npm run demo
 
-npm run dev
+# Run E2E tests (all 19 tools)
+npm run test:e2e
+
+# Start the server (stdio transport)
+npm run start
+
+# Start HTTP server (REST + MCP-over-HTTP)
+npm run start:http
+
+# Open MCP Inspector UI
+npm run inspect
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+### Environment Variables
 
-## Project Structure
+| Variable | Required | Default | Purpose |
+|----------|----------|---------|---------|
+| `SOLANA_RPC_URL` | No | `https://api.devnet.solana.com` | Solana RPC endpoint |
+| `HELIUS_RPC_URL` | No | Falls back to `SOLANA_RPC_URL` | Helius RPC endpoint |
+| `HELIUS_API_KEY` | For analytics/calibration | - | Transaction history API |
+| `SOL_PRICE_USD` | No | `150` | SOL price for USD conversions |
+| `COHERE_API_KEY` | No | (fallback mode) | Cohere Rerank API key for semantic tool routing |
+
+## Architecture
 
 ```
-app/
-  api/                    # Server-side API routes
-    lab/                  # Agent trade data + DR-CAM endpoint
-    leaderboard/          # Leaderboard CRUD + equity + registration
-  components/
-    landing/              # Landing page sections
-    leaderboard/          # Agent table, charts, registration
-    simulator/            # Monte Carlo, equity curves, enforcement comparison
-  lib/
-    dr-cam/              # Doubly Robust CAM estimator (causal inference)
-mcp-server/
-  src/
-    tools/               # 18 core tool implementations
-    lib/                 # Vault reader, session store, quant engine, reranker
-eval/
-  test_cases/            # DeepEval test suites
-  benchmarks/            # MSB, MCPSecBench, MCPMark adapters
-  correlation/           # Logic-P&L correlation analysis
-  impact/                # Ablation studies and regime stress tests
-data/
-  agent-trades/          # CSV trade history for 7 LLM models
-public/
-  llms.txt               # AI agent discovery (concise)
-  llms-full.txt          # AI agent discovery (full reference)
+src/
+├── index.ts                    # Server setup, 19 tool registrations, --http flag
+├── http-server.ts              # HTTP server: REST endpoints + /api/route semantic routing
+├── tool-registry.ts            # ToolDefinition interface, TOOL_REGISTRY, tool document builder
+├── tools/                      # One file per tool
+│   ├── check-trade.ts          # Core: pre-flight authorization
+│   ├── record-trade.ts         # Core: P&L logging + lockout trigger
+│   ├── calibrate.ts            # Core: 3-tier auto-calibration
+│   ├── analytics.ts            # Behavioral analysis + directives
+│   ├── playbook.ts             # Personalized trading playbook
+│   ├── session-strategy.ts     # Dynamic session limits
+│   ├── smart-route.ts          # Semantic tool routing via Cohere Rerank
+│   └── ...                     # 12 more tools
+├── lib/
+│   ├── quant-engine.ts         # Calibration + analytics engine (~1250 lines)
+│   ├── vault-reader.ts         # On-chain vault/profile/Drift deserialization
+│   ├── transaction-builder.ts  # Unsigned VersionedTransaction construction
+│   ├── session-store.ts        # In-memory session tracking + inferSessionState()
+│   ├── reranker.ts             # Cohere Rerank client with graceful fallback
+│   ├── helius-client.ts        # Helius API with circuit breaker
+│   ├── agentwallet-client.ts   # AgentWallet policy enforcement
+│   ├── scoring.ts              # Trust score (0-100) computation
+│   ├── types.ts                # All TypeScript interfaces
+│   ├── constants.ts            # Program IDs, seeds, strategy defaults
+│   ├── utils.ts                # safeCall, bigintReplacer, jsonContent helpers
+│   └── pda.ts                  # Vault & profile PDA derivation
+└── generated/vault/            # Codama-generated IDL types (do not edit)
 ```
 
-## Routes
+### Key Design Decisions
 
-| Path | Description |
-|------|-------------|
-| `/` | Landing page |
-| `/leaderboard` | Agent arena leaderboard |
-| `/leaderboard/[wallet]` | Agent detail with equity curves and trade history |
-| `/lab` | LLM enforcement simulator with Monte Carlo analysis |
-| `/docs/mcp` | MCP server documentation |
+**Never signs transactions.** The server builds unsigned `VersionedTransaction` objects (base64-encoded) for the caller to sign. Private keys never touch the MCP server.
 
-## Environment Variables
+**Vault-optional fallback.** When no vault exists, tools fall back to Helius transaction history for analytics and advisory-mode enforcement. Agents can start without any on-chain setup.
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `HELIUS_API_KEY` | Yes | Helius API key for Solana RPC and transaction history |
-| `SOLANA_RPC_URL` | No | Custom Solana RPC endpoint |
-| `COHERE_API_KEY` | No | Enables semantic tool routing (graceful fallback without) |
+**Machine-readable output.** Analytics returns structured `directives[]` (e.g., `{ type: "avoid_market", severity: "warning", params: { market: "PUMP_FUN" } }`) that agents can consume programmatically.
+
+**Session state classification.** The coaching engine classifies agents into 5 states (normal, post_loss, tilt, hot_streak, post_lockout_recovery) and adjusts position sizing, trade limits, and market recommendations accordingly.
+
+## On-Chain Programs
+
+| Program | Address | Purpose |
+|---------|---------|---------|
+| Vault | `GaxNRQXHVoYJQQEmXGRWSmBRmAvt7iWBtUuYWf8f8pki` | Risk enforcement vault |
+| Drift | `dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH` | Perpetual futures (position reading) |
+
+PDA seeds: `["vault", owner]` and `["trader_profile", authority]`
+
+## Adapting to Other Chains
+
+The business logic — calibration, session state, behavioral analytics, coaching, scoring, semantic routing — is chain-agnostic. Only four files in `src/lib/` are Solana-specific. Fork and replace them to target any exchange or chain:
+
+| File | What to replace |
+|------|----------------|
+| `src/lib/vault-reader.ts` | Your chain's account / state reader |
+| `src/lib/helius-client.ts` | Your exchange's trade history API |
+| `src/lib/transaction-builder.ts` | Your chain's unsigned transaction builder |
+| `src/lib/constants.ts` | Your program IDs, contract addresses, seeds |
+
+Everything in `quant-engine.ts`, `session-store.ts`, `scoring.ts`, `reranker.ts`, and all `src/tools/` stays the same.
+
+### Advisory Mode (no chain required)
+
+14 of 19 tools run entirely on in-memory session state — no wallet, no RPC, no API keys needed. Useful for testing, CEX agents, or any context where on-chain state isn't available.
+
+## Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `@modelcontextprotocol/sdk` | MCP server framework |
+| `@solana/kit` | Modern Solana RPC + PDA derivation |
+| `@solana/web3.js` | Transaction building |
+| `zod` | Runtime input validation |
 
 ## License
 
 MIT
-
----
-
-Co-authored by [Claude Opus 4.6](https://claude.ai) and [@beneat_ai](https://x.com/beneat_ai).
